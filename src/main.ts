@@ -1,4 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import VueKonva from 'vue-konva';
+import App from './App.vue';
+import { key, store } from './store';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(VueKonva);
+app.use(store, key);
+app.mount('#app');
