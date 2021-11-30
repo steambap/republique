@@ -15,6 +15,7 @@ const scene = computed(() => store.currentScene);
   <v-stage :config="stageConf">
     <v-layer>
       <MapEditor v-if="scene === 'map-editor'"></MapEditor>
+      <HexBattle v-if="scene === 'hex-battle'"></HexBattle>
     </v-layer>
   </v-stage>
   <HUD></HUD>
@@ -22,9 +23,10 @@ const scene = computed(() => store.currentScene);
 <script lang="ts">
 import HUD from './HUD.vue';
 import MapEditor from './MapEditor.vue';
+import HexBattle from './HexBattle.vue';
 
 export default {
-  components: { HUD, MapEditor }
+  components: { HUD, MapEditor, HexBattle }
 };
 </script>
 <style>

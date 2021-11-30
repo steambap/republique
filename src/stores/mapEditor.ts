@@ -1,18 +1,6 @@
 import { defineStore } from 'pinia';
-import map from '../maps/hunan.json';
 import konva from 'konva';
-
-// terrain -1/impossible 0/wood 1/plain 2/water 3/mountain
-export interface TerrainTile {
-  x: number;
-  y: number;
-  terrain: number;
-  elavation: number;
-}
-
-export interface TerrainTable {
-  [id: string]: TerrainTile;
-}
+import { newTile, TerrainTable } from '../map-definition';
 
 export interface IMapEditor {
   width: number;
@@ -25,12 +13,18 @@ export interface IMapEditor {
 export const useMapEditorStore = defineStore('mapEditor', {
   state: () => {
     const ret: IMapEditor = {
-      width: map.width,
-      height: map.height,
-      terrainData: map.data,
+      width: 10,
+      height: 10,
+      terrainData: {},
       editMode: 'select',
       terrainSelect: 0,
     };
+    for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
+        const id = j * 10 + i;
+        ret.terrainData[id.toString()] = newTile(i, j);
+      }
+    }
 
     return ret;
   },
@@ -41,12 +35,7 @@ export const useMapEditorStore = defineStore('mapEditor', {
       for (let i = 0; i < x; i++) {
         for (let j = 0; j < y; j++) {
           const id = j * x + i;
-          newTiles[id.toString()] = {
-            x: i,
-            y: j,
-            terrain: 1,
-            elavation: 0,
-          };
+          newTiles[id.toString()] = newTile(i, j);
         }
       }
 
