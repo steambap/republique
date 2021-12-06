@@ -22,7 +22,22 @@ class Hex {
   multiply(k: number): Hex {
     return new Hex(this.q * k, this.r * k, this.s * k);
   }
+
+  toPoint(): Point {
+    const col = this.q + ((this.r - (this.r & 1)) >> 1);
+    const row = this.r;
+    return new Point(row, col);
+  }
 }
+
+const DIRECTIONS = [
+  new Hex(1, 0, -1), // E
+  new Hex(1, -1, 0), // NE
+  new Hex(0, -1, 1), // NW
+  new Hex(-1, 0, 1), // W
+  new Hex(-1, 1, 0), // SW
+  new Hex(0, 1, -1)  // SE
+];
 
 class Point {
   x: number;
@@ -46,16 +61,23 @@ class Point {
   multiply(k: number): Point {
     return new Point(this.x * k, this.y * k);
   }
-}
 
-const DIRECTIONS = [
-  new Hex(1, 0, -1),
-  new Hex(1, -1, 0),
-  new Hex(0, -1, 1),
-  new Hex(-1, 0, 1),
-  new Hex(-1, 1, 0),
-  new Hex(0, 1, -1)
-];
+  toCube(): Hex {
+    const q = this.y - ((this.x - (this.x & 1)) >> 1);
+    const r = this.x;
+
+    return new Hex(q, r, -q - r);
+  }
+
+  getNeigbours(): Array<Point> {
+    const self = this.toCube();
+    const cubeNeigbours = DIRECTIONS.map(dir => {
+      return dir.add(self);
+    });
+
+    return cubeNeigbours.map(cube => cube.toPoint());
+  }
+}
 
 export {
   Hex,

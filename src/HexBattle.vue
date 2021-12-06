@@ -7,7 +7,7 @@ import { useHexBattleStore } from './stores/hexBattle';
 const origin = new Point(120, 80);
 const size = 48;
 const store = useHexBattleStore();
-const terrainColor = [150, 50, 200, 25];
+const terrainColor = [150, 60, 200, 25];
 const cellList = computed(() => Object.values(store.terrainData).map(d => {
   const pixel = new Point(d.x, d.y).toPixel(size).add(origin);
   const fillH = terrainColor[d.terrain] ? terrainColor[d.terrain] : 300;
@@ -32,9 +32,22 @@ const cellList = computed(() => Object.values(store.terrainData).map(d => {
 const onTileClick = (e: any) => {
   if (e.target instanceof konva.RegularPolygon) {
     const { originalPos } = e.target.attrs;
-    console.log(originalPos);
+    store.selectHex(originalPos);
   }
 };
+
+const overlayList = computed(() => store.moveRange.map(pos => {
+  const pixel = new Point(pos.x, pos.y).toPixel(size).add(origin);
+
+  return {
+    x: pixel.x,
+    y: pixel.y,
+    sides: 6,
+    radius: size - 12,
+    stroke: 'red',
+    id: `${pos.x},${pos.y}`,
+  };
+}));
 
 const unitList = computed(() => Object.values(store.unitData).map(d => {
   const pixel = new Point(d.pos.x, d.pos.y).toPixel(size).add(origin);
@@ -95,6 +108,24 @@ const onUnitClick = (e: any) => {
         }"
       ></v-regular-polygon>
       <v-text :config="{ text: cellData.id, listening: false }"></v-text>
+    </v-group>
+  </v-group>
+  <v-group name="overlay" :config="{ listening: false }">
+    <v-group
+      v-for="oData in overlayList"
+      :key="oData.id"
+      :config="{
+        x: oData.x,
+        y: oData.y
+      }"
+    >
+      <v-circle
+        :config="{
+          radius: oData.radius - 12,
+          stroke: oData.stroke,
+          strokeWidth: 2
+        }"
+      ></v-circle>
     </v-group>
   </v-group>
   <v-group name="units" @click="onUnitClick">
