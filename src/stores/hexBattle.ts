@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
 import konva from 'konva';
-import { Point } from '../hex';
 import { newUnit, TerrainTable, UnitTable, Unit, getCostTable, findReachableCells } from '../map-definition';
 import map from '../maps/jiangxi.json';
 
@@ -9,7 +8,7 @@ export const useHexBattleStore = defineStore('hexBattle', {
     const terrainData: TerrainTable = map.data;
     const unitData: UnitTable = {};
     const unit = newUnit({ x: 6, y: 6 }, "0");
-    const unit2 = newUnit({ x: 3, y: 8 }, "1");
+    const unit2 = newUnit({ x: 3, y: 8 }, "0");
     unitData[unit.id] = unit;
     unitData[unit2.id] = unit2;
     const moveRange: Array<konva.Vector2d> = [];

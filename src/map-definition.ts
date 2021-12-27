@@ -122,9 +122,9 @@ export function findReachableCells(
     neigbours.forEach(nb => {
       const possibleUnit = unitLoc.get(nb);
       if (possibleUnit && possibleUnit.factionId !== originUnit.factionId) {
-        return;
+        return; // cannot pass through enemy
       }
-      let newCost = (costSoFar.get(current) || 0) + (edges.get(current)?.get(nb) || 0);
+      let newCost = costSoFar.get(current)! + edges.get(current)!.get(nb)!;
       if (newCost > originUnit.mp) {
         return; // out of range
       }
@@ -142,7 +142,7 @@ export function findReachableCells(
       if (isEnemyZoc) {
         newCost = originUnit.mp;
       }
-      if (!costSoFar.has(nb) || newCost < (costSoFar.get(nb) || 0)) {
+      if (!costSoFar.has(nb) || newCost < costSoFar.get(nb)!) {
         costSoFar.set(nb, newCost);
         cameFrom.set(nb, current);
         frontier.enqueue(nb, newCost);
@@ -152,6 +152,9 @@ export function findReachableCells(
 
   const paths = new Map<string, Array<string>>();
   for (const des of cameFrom.keys()) {
+    if (unitLoc.has(des)) {
+      continue;
+    }
     const path: Array<string> = [];
     let current = des;
     while (current !== originNode) {
