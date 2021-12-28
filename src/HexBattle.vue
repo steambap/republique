@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 import konva from 'konva';
 import { Point } from './hex';
 import { useHexBattleStore } from './stores/hexBattle';
@@ -38,7 +38,8 @@ const onTileClick = (e: any) => {
   }
 };
 
-const overlayList = computed(() => store.moveRange.map(pos => {
+const overlayList = computed(() => store.moveRange.map(path => {
+  const pos = path[0];
   const pixel = new Point(pos.x, pos.y).toPixel(size).add(origin);
 
   return {
@@ -68,6 +69,40 @@ const onUnitClick = (e: any) => {
     store.selectUnit(unitId);
   }
 };
+const unitRefs: { [key: string]: konva.Group; } = {};
+const setItemRef = (el: any) => {
+  if (!el) return;
+  const group = el.getNode() as konva.Group;
+  const id = group.attrs.id as string;
+  unitRefs[id] = group;
+};
+watch(() => store.animPath, (animPath) => {
+  if (animPath.length === 0) {
+    return;
+  }
+  const fnList = animPath.slice(0).map(({ x, y }) => {
+    const pixel = new Point(x, y).toPixel(size).add(origin);
+    const group = unitRefs[store.unitSelected];
+
+    return function (cb: Function) {
+      group.to({
+        x: pixel.x,
+        y: pixel.y,
+        duration: 0.1,
+        onFinish: cb,
+      });
+    };
+  });
+
+  const waterfall = function (fn: Function[], done: Function) {
+    fn.length ? fn.pop()!(
+      function () { waterfall(fn, done); }
+    ) : done();
+  };
+  waterfall(fnList, function () {
+    store.endMoveAnim(animPath[0]);
+  });
+});
 </script>
 
 <template>
@@ -137,8 +172,10 @@ const onUnitClick = (e: any) => {
       :key="unitData.id"
       :config="{
         x: unitData.x,
-        y: unitData.y
+        y: unitData.y,
+        id: unitData.id
       }"
+      :ref="setItemRef"
     >
       <v-rect
         :config="{

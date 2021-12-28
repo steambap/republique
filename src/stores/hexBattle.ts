@@ -7,19 +7,22 @@ export const useHexBattleStore = defineStore('hexBattle', {
   state: () => {
     const terrainData: TerrainTable = map.data;
     const unitData: UnitTable = {};
-    const unit = newUnit({ x: 6, y: 6 }, "0");
-    const unit2 = newUnit({ x: 3, y: 8 }, "0");
+    const unit = newUnit({ x: 6, y: 6 }, "0", { combatValue: 65 });
+    const unit2 = newUnit({ x: 3, y: 8 }, "0", { combatValue: 68 });
     unitData[unit.id] = unit;
     unitData[unit2.id] = unit2;
-    const moveRange: Array<konva.Vector2d> = [];
+    const moveRange: konva.Vector2d[][] = [];
+    const animPath: konva.Vector2d[] = [];
 
     return {
+      headless: false,
       width: map.width,
       height: map.height,
       terrainData,
       unitData,
       unitSelected: "-1",
-      moveRange
+      moveRange,
+      animPath
     };
   },
   actions: {
@@ -45,13 +48,22 @@ export const useHexBattleStore = defineStore('hexBattle', {
         this.width
       );
 
-      const moveRange: Array<konva.Vector2d> = [];
-      for (const id of paths.keys()) {
-        const tile = this.terrainData[id];
-        moveRange.push({
+      const moveRange: konva.Vector2d[][] = [];
+      for (const [des, path] of paths.entries()) {
+        const tile = this.terrainData[des];
+        const singlePath: konva.Vector2d[] = [];
+        singlePath.push({
           x: tile.x,
           y: tile.y
         });
+        path.forEach(node => {
+          const n = this.terrainData[node];
+          singlePath.push({
+            x: n.x,
+            y: n.y
+          });
+        });
+        moveRange.push(singlePath);
       }
       this.moveRange = moveRange;
     },
@@ -60,17 +72,27 @@ export const useHexBattleStore = defineStore('hexBattle', {
         return;
       }
 
-      const nodeID = this.moveRange.findIndex(({ x, y }) => {
+      const nodeID = this.moveRange.findIndex((path) => {
+        const { x, y } = path[0];
         return payload.x === x && payload.y === y;
       });
       // out of move range, do nothing for now
       if (nodeID === -1) {
         return;
       }
-      const unit = this.currentUnit;
+      if (this.headless) {
+        this.endMoveAnim(payload);
+      } else {
+        this.animPath = this.moveRange[nodeID].slice(1);
+        this.moveRange = [];
+      }
+    },
+    endMoveAnim(payload: konva.Vector2d) {
+      const unit = this.currentUnit!;
+      unit.pos = payload;
       this.unitSelected = "-1";
       this.moveRange = [];
-      unit.pos = payload;
+      this.animPath = [];
     }
   },
   getters: {

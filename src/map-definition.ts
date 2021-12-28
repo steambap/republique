@@ -29,10 +29,14 @@ export function newTile(x: number, y: number): TerrainTile {
 export interface Unit {
   pos: konva.Vector2d;
   id: string;
+  name: string;
   factionId: string;
 
-  hp: number;
-  mp: number;
+  cohesion: number;
+  movementPoint: number;
+  combatValue: number;
+  moral: number;
+  experience: number;
 }
 
 let GID = 0;
@@ -40,13 +44,18 @@ export default function gid(): string {
   return (++GID).toString();
 }
 
-export function newUnit(pos: konva.Vector2d, factionId: string): Unit {
+export function newUnit(pos: konva.Vector2d, factionId: string, options: Partial<Unit>): Unit {
   const id = gid();
 
   return {
+    ...options,
     pos, id, factionId,
-    hp: 100,
-    mp: 6
+    name: '',
+    cohesion: 60,
+    movementPoint: 6,
+    combatValue: 18,
+    moral: 45,
+    experience: 43
   };
 }
 
@@ -125,7 +134,7 @@ export function findReachableCells(
         return; // cannot pass through enemy
       }
       let newCost = costSoFar.get(current)! + edges.get(current)!.get(nb)!;
-      if (newCost > originUnit.mp) {
+      if (newCost > originUnit.movementPoint) {
         return; // out of range
       }
       let isEnemyZoc = false;
@@ -140,7 +149,7 @@ export function findReachableCells(
       });
       // zoc cost all movement
       if (isEnemyZoc) {
-        newCost = originUnit.mp;
+        newCost = originUnit.movementPoint;
       }
       if (!costSoFar.has(nb) || newCost < costSoFar.get(nb)!) {
         costSoFar.set(nb, newCost);
