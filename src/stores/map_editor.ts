@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import konva from 'konva';
-import { newTile, TerrainTable } from '../map-definition';
+import { newTile, TerrainTable } from '../map_definition';
 
 export interface IMapEditor {
   width: number;

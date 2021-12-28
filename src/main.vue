@@ -21,9 +21,9 @@ const scene = computed(() => store.currentScene);
   <HUD></HUD>
 </template>
 <script lang="ts">
-import HUD from './HUD.vue';
-import MapEditor from './MapEditor.vue';
-import HexBattle from './HexBattle.vue';
+import HUD from './gui.vue';
+import MapEditor from './map_editor.vue';
+import HexBattle from './hex_battle.vue';
 
 export default {
   components: { HUD, MapEditor, HexBattle }

@@ -2,15 +2,13 @@
 import { computed } from 'vue';
 import konva from 'konva';
 import { Point } from './hex';
-import { useMapEditorStore } from './stores/mapEditor';
+import { useMapEditorStore } from './stores/map_editor';
+import { size, origin, terrainHue } from './constants';
 
-const origin = new Point(120, 80);
-const size = 48;
 const store = useMapEditorStore();
-const terrainColor = [150, 50, 200, 25];
 const cellList = computed(() => Object.values(store.terrainData).map(d => {
   const pixel = new Point(d.x, d.y).toPixel(size).add(origin);
-  const fillH = terrainColor[d.terrain] ? terrainColor[d.terrain] : 300;
+  const fillH = terrainHue[d.terrain] ? terrainHue[d.terrain] : 300;
 
   return {
     x: pixel.x,

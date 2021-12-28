@@ -11,7 +11,7 @@ const scene = computed(() => store.currentScene);
   </div>
 </template>
 <script lang="ts">
-import MapEditorTools from './views/MapEditorTools.vue';
+import MapEditorTools from './views/map_editor_tools.vue';
 
 export default {
   components: { MapEditorTools }

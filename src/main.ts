@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import VueKonva from 'vue-konva';
-import App from './App.vue';
+import App from './main.vue';
 
 const app = createApp(App);
 app.use(VueKonva);

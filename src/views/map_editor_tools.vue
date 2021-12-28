@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useMapEditorStore } from '../stores/mapEditor';
+import { useMapEditorStore } from '../stores/map_editor';
 const sizeX = ref(10);
 const sizeY = ref(10);
 

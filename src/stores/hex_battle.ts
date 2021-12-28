@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import konva from 'konva';
-import { newUnit, TerrainTable, UnitTable, Unit, getCostTable, findReachableCells } from '../map-definition';
+import { newUnit, TerrainTable, UnitTable, Unit, getCostTable, findReachableCells } from '../map_definition';
 import map from '../maps/jiangxi.json';
 
 export const useHexBattleStore = defineStore('hexBattle', {

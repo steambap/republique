@@ -2,17 +2,16 @@
 import { computed, watch } from 'vue';
 import konva from 'konva';
 import { Point } from './hex';
-import { useHexBattleStore } from './stores/hexBattle';
-import useImage from './use-image';
+import { useHexBattleStore } from './stores/hex_battle';
+import useImage from './use_image';
 import unitIconPaths from './assets/soldier.webp';
+import { waterfall } from './util';
+import { origin, size, terrainHue } from './constants';
 
-const origin = new Point(120, 80);
-const size = 48;
 const store = useHexBattleStore();
-const terrainColor = [150, 60, 200, 25];
 const cellList = computed(() => Object.values(store.terrainData).map(d => {
   const pixel = new Point(d.x, d.y).toPixel(size).add(origin);
-  const fillH = terrainColor[d.terrain] ? terrainColor[d.terrain] : 300;
+  const fillH = terrainHue[d.terrain] ? terrainHue[d.terrain] : 300;
 
   return {
     x: pixel.x,
@@ -80,7 +79,7 @@ watch(() => store.animPath, (animPath) => {
   if (animPath.length === 0) {
     return;
   }
-  const fnList = animPath.slice(0).map(({ x, y }) => {
+  const fnList = animPath.map(({ x, y }) => {
     const pixel = new Point(x, y).toPixel(size).add(origin);
     const group = unitRefs[store.unitSelected];
 
@@ -94,11 +93,6 @@ watch(() => store.animPath, (animPath) => {
     };
   });
 
-  const waterfall = function (fn: Function[], done: Function) {
-    fn.length ? fn.pop()!(
-      function () { waterfall(fn, done); }
-    ) : done();
-  };
   waterfall(fnList, function () {
     store.endMoveAnim(animPath[0]);
   });
@@ -112,7 +106,7 @@ watch(() => store.animPath, (animPath) => {
       :key="cellData.id"
       :config="{
         x: cellData.x,
-        y: cellData.y
+        y: cellData.y,
       }"
     >
       <v-regular-polygon
@@ -196,9 +190,11 @@ watch(() => store.animPath, (animPath) => {
           x: -24,
           y: -24,
           image: unitIcon,
+          width: 48,
+          height: 48,
           listening: false
         }"
-      ></v-image>
+      />
     </v-group>
   </v-group>
 </template>
