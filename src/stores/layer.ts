@@ -6,6 +6,6 @@ export interface ILayer {
 
 export const useLayerStore = defineStore<string, ILayer>('layer', {
   state: () => ({
-    currentScene: 'hex-battle'
+    currentScene: 'map-editor'
   })
 });

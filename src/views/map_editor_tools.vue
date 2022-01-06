@@ -27,8 +27,8 @@ const onSetTerrain = (e: MouseEvent) => {
 };
 </script>
 <template>
-  <div class="right-panel">
-    <div>Map Editor</div>
+  <div class="bg-slate-200 w-[300px] fixed top-0 right-0 bottom-0">
+    <div class="py-2">Map Editor</div>
     <div class="size-setter">
       <input type="number" v-model.number="sizeX" min="7" max="21" />
       x
@@ -95,13 +95,3 @@ const onSetTerrain = (e: MouseEvent) => {
     </div>
   </div>
 </template>
-<style>
-#HUD .right-panel {
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 300px;
-  background-color: #d3dcde;
-}
-</style>
