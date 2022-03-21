@@ -30,7 +30,7 @@ export class Dijkstra {
       let current = des;
       while (current !== originNode) {
         path.push(current);
-        current = cameFrom.get(current) as string;
+        current = cameFrom.get(current)!;
       }
       paths.set(des, path);
     }
@@ -40,7 +40,7 @@ export class Dijkstra {
 
   getNeigbours(edges: Map<string, Map<string, number>>, node: string): Array<string> {
     if (edges.has(node)) {
-      const neigbourMap = edges.get(node) as Map<string, number>;
+      const neigbourMap = edges.get(node)!;
       return [...neigbourMap.keys()];
     }
 

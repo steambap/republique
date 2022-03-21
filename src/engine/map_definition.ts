@@ -1,6 +1,5 @@
-import { Point } from './hex';
-import { HeapPriorityQueue } from './pathfinding/definition';
-import konva from 'konva';
+import { Pos, IPos } from './hex';
+import { HeapPriorityQueue } from '../pathfinding/definition';
 
 // terrain -1/impossible 0/wood 1/plain 2/water 3/mountain
 const terrainCostTable = new Map<number, number>();
@@ -27,7 +26,7 @@ export function newTile(x: number, y: number): TerrainTile {
 }
 
 export interface Unit {
-  pos: konva.Vector2d;
+  pos: IPos;
   id: string;
   name: string;
   factionId: string;
@@ -44,7 +43,7 @@ export default function gid(): string {
   return (++GID).toString();
 }
 
-export function newUnit(pos: konva.Vector2d, factionId: string, options: Partial<Unit>): Unit {
+export function newUnit(pos: IPos, factionId: string, options: Partial<Unit>): Unit {
   const id = gid();
 
   return {
@@ -79,7 +78,8 @@ export function getCostTable(tData: TerrainTable, width: number): Map<string, Ma
   for (const id in tData) {
     const edge = new Map<string, number>();
     const terrain = tData[id];
-    const nbs = new Point(terrain.x, terrain.y).getNeigbours();
+    // const nbs = new Point(terrain.x, terrain.y).getNeigbours();
+    const nbs = Pos.getNeighbors(terrain);
 
     nbs.forEach(node => {
       const nodeID = node.y * width + node.x;
