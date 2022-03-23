@@ -1,5 +1,5 @@
-import { Pos, IPos } from './hex';
-import { HeapPriorityQueue } from '../pathfinding/definition';
+import { Pos, IPos } from "./hex";
+import { HeapPriorityQueue } from "../pathfinding/definition";
 
 // terrain -1/impossible 0/wood 1/plain 2/water 3/mountain
 const terrainCostTable = new Map<number, number>();
@@ -19,10 +19,15 @@ export interface TerrainTable {
 
 export function newTile(x: number, y: number): TerrainTile {
   return {
-    x, y,
+    x,
+    y,
     terrain: 1,
-    elavation: 0
+    elavation: 0,
   };
+}
+
+export function getTileId(x: number, y: number): string {
+  return `${String(x).padStart(2, '0')}${String(y).padStart(2, '0')}`;
 }
 
 export interface Unit {
@@ -43,18 +48,24 @@ export default function gid(): string {
   return (++GID).toString();
 }
 
-export function newUnit(pos: IPos, factionId: string, options: Partial<Unit>): Unit {
+export function newUnit(
+  pos: IPos,
+  factionId: string,
+  options: Partial<Unit>
+): Unit {
   const id = gid();
 
   return {
     ...options,
-    pos, id, factionId,
-    name: '',
+    pos,
+    id,
+    factionId,
+    name: "",
     cohesion: 60,
     movementPoint: 6,
     combatValue: 18,
     moral: 45,
-    experience: 43
+    experience: 43,
   };
 }
 
@@ -72,7 +83,10 @@ export function getMovementCost(from: TerrainTile, to: TerrainTile) {
   return climbCost + terrainCost;
 }
 
-export function getCostTable(tData: TerrainTable, width: number): Map<string, Map<string, number>> {
+export function getCostTable(
+  tData: TerrainTable,
+  width: number
+): Map<string, Map<string, number>> {
   const edges = new Map<string, Map<string, number>>();
 
   for (const id in tData) {
@@ -81,7 +95,7 @@ export function getCostTable(tData: TerrainTable, width: number): Map<string, Ma
     // const nbs = new Point(terrain.x, terrain.y).getNeigbours();
     const nbs = Pos.getNeighbors(terrain);
 
-    nbs.forEach(node => {
+    nbs.forEach((node) => {
       const nodeID = node.y * width + node.x;
       if (!tData[nodeID.toString()]) {
         return;
@@ -99,7 +113,10 @@ export function getCostTable(tData: TerrainTable, width: number): Map<string, Ma
   return edges;
 }
 
-function getNeigbours(edges: Map<string, Map<string, number>>, node: string): Array<string> {
+function getNeigbours(
+  edges: Map<string, Map<string, number>>,
+  node: string
+): Array<string> {
   if (edges.has(node)) {
     const neigbourMap = edges.get(node) as Map<string, number>;
     return [...neigbourMap.keys()];
@@ -128,7 +145,7 @@ export function findReachableCells(
   while (frontier.count() !== 0) {
     const current = frontier.dequeue();
     const neigbours = getNeigbours(edges, current);
-    neigbours.forEach(nb => {
+    neigbours.forEach((nb) => {
       const possibleUnit = unitLoc.get(nb);
       if (possibleUnit && possibleUnit.factionId !== originUnit.factionId) {
         return; // cannot pass through enemy
@@ -139,7 +156,7 @@ export function findReachableCells(
       }
       let isEnemyZoc = false;
       const nbsOfNode = getNeigbours(edges, nb);
-      nbsOfNode.forEach(id => {
+      nbsOfNode.forEach((id) => {
         if (unitLoc.has(id)) {
           const unit = unitLoc.get(id) as Unit;
           if (unit.factionId !== originUnit.factionId) {

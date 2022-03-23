@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { produce } from 'immer';
 import { Group, RegularPolygon } from 'react-konva';
 import { useRecoilState } from 'recoil';
 import { Pos } from '../engine/hex';
@@ -18,25 +19,18 @@ const MapEditor = () => {
       return;
     }
     if (editorState.editMode === 'elavation') {
-      const tile = editorState.terrainData[id];
-      const newTile = {...tile, elavation: (tile.elavation + 1) % 4 };
-      setEditorState({
-        ...editorState,
-        terrainData: {
-          ...editorState.terrainData,
-          id: newTile,
-        },
-      });
+      setEditorState(produce(draft => {
+        const tile = draft.terrainData[id];
+        tile.elavation = (tile.elavation + 1) % 3;
+      }));
     } else if (editorState.editMode === 'terrain') {
+      setEditorState(produce(draft => {
+        const tile = draft.terrainData[id];
+        tile.terrain = editorState.terrainSelect;
+      }));
+    } else {
       const tile = editorState.terrainData[id];
-      const newTile = {...tile, terrain: editorState.terrainSelect };
-      setEditorState({
-        ...editorState,
-        terrainData: {
-          ...editorState.terrainData,
-          id: newTile,
-        },
-      });
+      console.log(`x:${tile.x}, y:${tile.y}`);
     }
   }, [editorState]);
 
