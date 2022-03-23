@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { produce } from 'immer';
-import { Group, RegularPolygon } from 'react-konva';
+import { Group, RegularPolygon, Line } from 'react-konva';
 import { useRecoilState } from 'recoil';
 import { Pos } from '../engine/hex';
 import { mapEditorState } from '../stores/map_editor';
@@ -13,6 +13,7 @@ const MapEditor = () => {
     ...editorState.terrainData[key],
     id: key,
   }));
+  const roadIdList = editorState.roadData.filter(road => road.length > 1);
   const setTile = useCallback((id: string) => {
     if (!editorState.terrainData[id]) {
       console.log('Nonsense location', id);
@@ -28,6 +29,19 @@ const MapEditor = () => {
         const tile = draft.terrainData[id];
         tile.terrain = editorState.terrainSelect;
       }));
+    } else if (editorState.editMode === 'road') {
+      if (editorState.roadMode === 'add node') {
+        setEditorState(produce(draft => {
+          const tailRoad = draft.roadData[draft.roadData.length - 1];
+          tailRoad.push(id);
+        }));
+      } else if (editorState.roadMode === 'delete node') {
+        setEditorState(produce(draft => {
+          const tailRoad = draft.roadData[draft.roadData.length - 1];
+          const idx = tailRoad.findIndex(el => el === id);
+          tailRoad.splice(idx, 1);
+        }));
+      }
     } else {
       const tile = editorState.terrainData[id];
       console.log(`x:${tile.x}, y:${tile.y}`);
@@ -48,9 +62,30 @@ const MapEditor = () => {
               strokeWidth={2}
               name="elavation"
             />
-            <TerrainTile terrain={d.terrain} />
+            <TerrainTile tile={d} />
           </Group>
         );
+      })}
+      {roadIdList.map((ids) => {
+        const points: number[] = [];
+        ids.forEach(id => {
+          const tile = editorState.terrainData[id];
+          const pixel = Pos.add(origin, Pos.toPixel(tile, size));
+          points.push(pixel.x, pixel.y);
+        });
+
+        return (
+          <Line
+            points={points}
+            tension={0.5}
+            dash={[24, 10, 2, 10]}
+            stroke="black"
+            strokeWidth={4}
+            lineCap="round"
+            lineJoin="round"
+            listening={false}
+          />
+        )
       })}
     </Group>
   );

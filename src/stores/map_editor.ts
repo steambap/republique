@@ -3,6 +3,7 @@ import { newTile, TerrainTable, getTileId } from "../engine/map_definition";
 import map from "../maps/jiangxi.json";
 
 export type TEditMode = "select" | "terrain" | "elavation" | "road";
+export type TRoadMode = "add node" | "delete node" | 'delete road';
 
 export interface IMapEditor {
   width: number;
@@ -10,7 +11,8 @@ export interface IMapEditor {
   terrainData: TerrainTable;
   editMode: TEditMode;
   terrainSelect: number;
-  addRoad: boolean;
+  roadMode: TRoadMode;
+  roadData: string[][];
 }
 
 export function newTerrainTable(x: number, y: number): TerrainTable {
@@ -36,6 +38,7 @@ export const mapEditorState = atom<IMapEditor>({
     terrainData,
     editMode: "select",
     terrainSelect: 0,
-    addRoad: true,
+    roadMode: "add node",
+    roadData: [[]],
   },
 });

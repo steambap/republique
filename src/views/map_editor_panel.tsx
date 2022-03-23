@@ -1,11 +1,16 @@
 import { useState, useCallback } from "react";
+import { produce } from 'immer'
 import { useRecoilState } from "recoil";
 import { getTileId, TerrainTable } from "../engine/map_definition";
 import {
   mapEditorState,
   TEditMode,
+  TRoadMode,
   newTerrainTable,
 } from "../stores/map_editor";
+import { terrainNameMap } from "../constants";
+
+const roadModeList: TRoadMode[] = ["add node", "delete node", "delete road"];
 
 const MapEditorPanel = () => {
   const [exportTxt, setTxt] = useState("");
@@ -33,9 +38,16 @@ const MapEditorPanel = () => {
   const setMap = useCallback(() => {
     setEditorState({
       ...editorState,
+      width: sizeX,
+      height: sizeY,
       terrainData: newTerrainTable(sizeX, sizeY),
     });
   }, [sizeX, sizeY]);
+  const setRoadMode = useCallback((mode: TRoadMode) => {
+    setEditorState(produce(draft => {
+      draft.roadMode = mode;
+    }));
+  }, []);
   const setExport = useCallback(() => {
     const tiles = editorState.terrainData;
     const exportTiles: TerrainTable = {};
@@ -114,46 +126,40 @@ const MapEditorPanel = () => {
       {editorState.editMode === "terrain" && <div>Please select a terrain</div>}
       {editorState.editMode === "terrain" && (
         <div>
-          <label>
-            <input
-              onChange={() => setTerrain(0)}
-              type="radio"
-              name="terrainSelect"
-              checked={editorState.terrainSelect === 0}
-              value="0"
-            />
-            Wood
-          </label>
-          <label>
-            <input
-              onChange={() => setTerrain(1)}
-              type="radio"
-              name="terrainSelect"
-              checked={editorState.terrainSelect === 1}
-              value="1"
-            />
-            Plain
-          </label>
-          <label>
-            <input
-              onChange={() => setTerrain(2)}
-              type="radio"
-              name="terrainSelect"
-              checked={editorState.terrainSelect === 2}
-              value="2"
-            />
-            Water
-          </label>
-          <label>
-            <input
-              onChange={() => setTerrain(3)}
-              type="radio"
-              name="terrainSelect"
-              checked={editorState.terrainSelect === 3}
-              value="3"
-            />
-            Peak
-          </label>
+          {Array.from(terrainNameMap).map(([key, terrainName]) => (
+            <label key={key.toString()}>
+              <input
+                onChange={() => setTerrain(key)}
+                type="radio"
+                name="terrainSelect"
+                checked={editorState.terrainSelect === key}
+                value={terrainName}
+              />
+              {terrainName}
+            </label>
+          ))}
+        </div>
+      )}
+      {editorState.editMode === 'road' && <div>Roads</div>}
+      {editorState.editMode === 'road' && (
+        <div>
+          {roadModeList.map(mode => (
+            <label key={mode} className="block">
+              <input
+                onChange={() => setRoadMode(mode)}
+                type="radio"
+                name="roadMode"
+                checked={editorState.roadMode === mode}
+                value={mode}
+              />
+              {mode}
+            </label>
+          ))}
+          <div>
+            <button className="button" disabled={editorState.roadData.slice(-1)[0].length < 1}>
+              Finish Road
+            </button>
+          </div>
         </div>
       )}
       <div className="mt-2">options</div>

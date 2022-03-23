@@ -1,6 +1,11 @@
-import { RegularPolygon } from 'react-konva';
-import useImage from 'use-image';
-import { size } from '../../constants';
+import { RegularPolygon } from "react-konva";
+import useImage from "use-image";
+import { TerrainTile as ITerrainTile } from "../../engine/map_definition";
+import { size } from "../../constants";
+
+interface ITileProp {
+  tile: ITerrainTile
+}
 
 export const WaterTile = () => (
   <RegularPolygon
@@ -10,10 +15,13 @@ export const WaterTile = () => (
     listening={false}
     name="terrain"
   />
-)
+);
 
-export const WoodTile = () => {
-  const [image] = useImage('/tile/woods_062.webp');
+export const WoodTile = ({ tile }: ITileProp) => {
+  const [image1] = useImage("/tile/woods_061.webp");
+  const [image2] = useImage("/tile/woods_062.webp");
+  const image = (tile.x + tile.y) % 2 === 0 ? image1 : image2;
+
   return (
     <RegularPolygon
       sides={6}
@@ -26,7 +34,7 @@ export const WoodTile = () => {
       name="terrain"
     />
   );
-}
+};
 
 export const PeakTile = () => (
   <RegularPolygon
@@ -36,17 +44,17 @@ export const PeakTile = () => (
     listening={false}
     name="terrain"
   />
-)
+);
 
-export const TerrainTile = ({ terrain }: {terrain: number}) => {
-  if (terrain === 0) {
-    return <WoodTile />
+export const TerrainTile = ({ tile }: ITileProp) => {
+  if (tile.terrain === 0) {
+    return <WoodTile tile={tile} />;
   }
-  if (terrain === 2) {
-    return <WaterTile />
+  if (tile.terrain === 2) {
+    return <WaterTile />;
   }
-  if (terrain === 3) {
-    return <PeakTile />
+  if (tile.terrain === 3) {
+    return <PeakTile />;
   }
 
   return null;
