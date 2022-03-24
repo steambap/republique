@@ -54,18 +54,25 @@ const MapEditorPanel = () => {
     Object.values(tiles).forEach((tile) => {
       exportTiles[getTileId(tile.x, tile.y)] = tile;
     });
+    const roadData = editorState.roadData.filter(road => road.length > 1);
 
     const txt = JSON.stringify(
       {
         width: editorState.width,
         height: editorState.height,
         data: exportTiles,
+        roadData,
       },
       null,
       2
     );
     setTxt(txt);
   }, [editorState]);
+  const setRoadDone = useCallback(() => {
+    setEditorState(produce(draft => {
+      draft.roadData.push([]);
+    }));
+  }, []);
 
   return (
     <div className="bg-slate-200 w-[300px] fixed top-0 right-0 bottom-0">
@@ -156,7 +163,11 @@ const MapEditorPanel = () => {
             </label>
           ))}
           <div>
-            <button className="button" disabled={editorState.roadData.slice(-1)[0].length < 1}>
+            <button
+              className="button"
+              disabled={editorState.roadData[editorState.roadData.length - 1].length < 2}
+              onClick={setRoadDone}
+            >
               Finish Road
             </button>
           </div>

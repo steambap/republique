@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 import { newTile, TerrainTable, getTileId } from "../engine/map_definition";
-import map from "../maps/jiangxi.json";
+import map from "../maps/hunan.json";
 
 export type TEditMode = "select" | "terrain" | "elavation" | "road";
 export type TRoadMode = "add node" | "delete node" | 'delete road';
@@ -29,6 +29,8 @@ export function newTerrainTable(x: number, y: number): TerrainTable {
 }
 
 const terrainData: TerrainTable = map.data;
+const roadData: string[][] = map.roadData;
+roadData.push([]);
 
 export const mapEditorState = atom<IMapEditor>({
   key: "map_editor",
@@ -39,6 +41,6 @@ export const mapEditorState = atom<IMapEditor>({
     editMode: "select",
     terrainSelect: 0,
     roadMode: "add node",
-    roadData: [[]],
+    roadData,
   },
 });

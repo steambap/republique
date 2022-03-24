@@ -41,6 +41,13 @@ const MapEditor = () => {
           const idx = tailRoad.findIndex(el => el === id);
           tailRoad.splice(idx, 1);
         }));
+      } else {
+        setEditorState(produce(draft => {
+          draft.roadData = draft.roadData.filter(road => !road.includes(id));
+          if (draft.roadData.length === 0) {
+            draft.roadData = [[]];
+          }
+        }));
       }
     } else {
       const tile = editorState.terrainData[id];
