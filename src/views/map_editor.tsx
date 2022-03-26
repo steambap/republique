@@ -6,6 +6,7 @@ import { Pos } from '../engine/hex';
 import { mapEditorState } from '../stores/map_editor';
 import { size, origin, elavationColor } from '../constants';
 import { TerrainTile } from './components/terrain';
+import { Weather } from './components/weather_tile';
 
 const MapEditor = () => {
   const [editorState, setEditorState] = useRecoilState(mapEditorState);
@@ -51,7 +52,7 @@ const MapEditor = () => {
       }
     } else {
       const tile = editorState.terrainData[id];
-      console.log(`x:${tile.x}, y:${tile.y}`);
+      console.log(`x:${tile.x}, y:${tile.y}, hi:${tile.elavation}`);
     }
   }, [editorState]);
 
@@ -70,6 +71,7 @@ const MapEditor = () => {
               name="elavation"
             />
             <TerrainTile tile={d} />
+            <Weather weather={editorState.weatherPreview} tile={d} />
           </Group>
         );
       })}
@@ -83,6 +85,7 @@ const MapEditor = () => {
 
         return (
           <Line
+            key={ids.join(",")}
             points={points}
             tension={0.5}
             dash={[24, 10, 2, 10]}

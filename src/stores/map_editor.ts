@@ -1,9 +1,10 @@
 import { atom } from "recoil";
 import { newTile, TerrainTable, getTileId } from "../engine/map_definition";
+import { TWeather } from "../engine/weather";
 import map from "../maps/hunan.json";
 
 export type TEditMode = "select" | "terrain" | "elavation" | "road";
-export type TRoadMode = "add node" | "delete node" | 'delete road';
+export type TRoadMode = "add node" | "delete node" | "delete road";
 
 export interface IMapEditor {
   width: number;
@@ -13,6 +14,7 @@ export interface IMapEditor {
   terrainSelect: number;
   roadMode: TRoadMode;
   roadData: string[][];
+  weatherPreview: TWeather;
 }
 
 export function newTerrainTable(x: number, y: number): TerrainTable {
@@ -42,5 +44,6 @@ export const mapEditorState = atom<IMapEditor>({
     terrainSelect: 0,
     roadMode: "add node",
     roadData,
+    weatherPreview: "dry",
   },
 });

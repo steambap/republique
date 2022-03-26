@@ -9,8 +9,10 @@ import {
   newTerrainTable,
 } from "../stores/map_editor";
 import { terrainNameMap } from "../constants";
+import { TWeather } from '../engine/weather';
 
 const roadModeList: TRoadMode[] = ["add node", "delete node", "delete road"];
+const weatherList: TWeather[] = ["dry", "mud", "h.mud", "snow"];
 
 const MapEditorPanel = () => {
   const [exportTxt, setTxt] = useState("");
@@ -72,6 +74,11 @@ const MapEditorPanel = () => {
     setEditorState(produce(draft => {
       draft.roadData.push([]);
     }));
+  }, []);
+  const setWeather = useCallback((w: TWeather) => {
+    setEditorState(produce(draft => {
+      draft.weatherPreview = w;
+    }))
   }, []);
 
   return (
@@ -173,6 +180,19 @@ const MapEditorPanel = () => {
           </div>
         </div>
       )}
+      <div className="mt-2">Weather</div>
+      {weatherList.map(weather => (
+        <label key={weather} className="block">
+          <input
+            onChange={() => setWeather(weather)}
+            type="radio"
+            name="weatherSelect"
+            checked={editorState.weatherPreview === weather}
+            value={weather}
+          />
+          {weather}
+        </label>
+      ))}
       <div className="mt-2">options</div>
       <div>
         <button onClick={setExport} className="button mb-1">

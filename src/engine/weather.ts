@@ -1,3 +1,5 @@
+export type TWeather = 'dry' | 'mud' | 'h.mud' | 'snow' | 'blizzard';
+
 export interface IWeather {
   weather: 'dry' | 'mud' | 'h.mud' | 'snow' | 'blizzard';
   level: number;
