@@ -6,6 +6,7 @@ import { Stage, Layer } from "react-konva";
 import { gameState } from "./stores/game";
 import MapEditor from "./views/map_editor";
 import MapEditorPanel from "./views/map_editor_panel";
+import TitleScreen from './views/title_screen';
 
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -18,10 +19,13 @@ const Game = () => {
     <>
       <Stage width={width} height={height} draggable>
         <Bridge>
-          <Layer>{currentScene === "map-editor" && <MapEditor />}</Layer>
+          <Layer>{currentScene === "map_editor" && <MapEditor />}</Layer>
         </Bridge>
       </Stage>
-      <div id="HUD">{currentScene === "map-editor" && <MapEditorPanel />}</div>
+      <div id="HUD">
+        {currentScene === "map_editor" && <MapEditorPanel />}
+        {currentScene === "title_screen" && <TitleScreen />}
+      </div>
     </>
   );
 };
