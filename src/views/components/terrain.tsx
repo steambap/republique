@@ -4,7 +4,7 @@ import { TerrainTile as ITerrainTile } from "../../engine/map_definition";
 import { size } from "../../constants";
 
 interface ITileProp {
-  tile: ITerrainTile
+  tile: ITerrainTile;
 }
 
 export const WaterTile = () => (
@@ -46,6 +46,23 @@ export const PeakTile = () => (
   />
 );
 
+export const MarshTile = ({ tile }: ITileProp) => {
+  const [image1] = useImage("/tile/marsh_001.webp");
+
+  return (
+    <RegularPolygon
+      sides={6}
+      radius={size}
+      fillPatternImage={image1}
+      fillPatternRepeat="no-repeat"
+      fillPatternOffsetX={36}
+      fillPatternOffsetY={36}
+      listening={false}
+      name="terrain"
+    />
+  );
+};
+
 export const TerrainTile = ({ tile }: ITileProp) => {
   if (tile.terrain === 0) {
     return <WoodTile tile={tile} />;
@@ -55,6 +72,9 @@ export const TerrainTile = ({ tile }: ITileProp) => {
   }
   if (tile.terrain === 3) {
     return <PeakTile />;
+  }
+  if (tile.terrain === 5) {
+    return <MarshTile tile={tile} />;
   }
 
   return null;

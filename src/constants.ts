@@ -1,11 +1,12 @@
-import { IPos } from './engine/hex';
+import { IPos } from "./engine/hex";
 
 export const size = 48;
 export const origin: IPos = { x: 120, y: 80 };
 export const elavationColor = [
-  'hsl(111,20%,85%)',
-  'hsl(46,18%,92%)',
-  'hsl(39,18%,73%)',
+  "hsl(111,20%,85%)",
+  "hsl(46,18%,91%)",
+  "hsl(39,18%,73%)",
+  "hsl(33,23%,60%)",
 ];
 export const terrainNameMap = new Map<number, string>();
 // terrainNameMap.set(-1, "impossible");

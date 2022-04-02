@@ -8,6 +8,6 @@ export interface IGame {
 export const gameState = atom<IGame>({
   key: 'game',
   default: {
-    currentScene: 'title_screen',
+    currentScene: 'map_editor',
   },
 });

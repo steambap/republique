@@ -1,60 +1,75 @@
-import { useCallback } from 'react';
-import { produce } from 'immer';
-import { Group, RegularPolygon, Line } from 'react-konva';
-import { useRecoilState } from 'recoil';
-import { Pos } from '../engine/hex';
-import { mapEditorState } from '../stores/map_editor';
-import { size, origin, elavationColor } from '../constants';
-import { TerrainTile } from './components/terrain';
-import { Weather } from './components/weather_tile';
+import { useCallback } from "react";
+import { produce } from "immer";
+import { Group, RegularPolygon, Line } from "react-konva";
+import { useRecoilState } from "recoil";
+import { Pos } from "../engine/hex";
+import { mapEditorState } from "../stores/map_editor";
+import { size, origin, elavationColor } from "../constants";
+import { TerrainTile } from "./components/terrain";
+import { Weather } from "./components/weather_tile";
 
 const MapEditor = () => {
   const [editorState, setEditorState] = useRecoilState(mapEditorState);
-  const cellList = Object.keys(editorState.terrainData).map(key => ({
+  const cellList = Object.keys(editorState.terrainData).map((key) => ({
     ...editorState.terrainData[key],
     id: key,
   }));
-  const roadIdList = editorState.roadData.filter(road => road.length > 1);
-  const setTile = useCallback((id: string) => {
-    if (!editorState.terrainData[id]) {
-      console.log('Nonsense location', id);
-      return;
-    }
-    if (editorState.editMode === 'elavation') {
-      setEditorState(produce(draft => {
-        const tile = draft.terrainData[id];
-        tile.elavation = (tile.elavation + 1) % 3;
-      }));
-    } else if (editorState.editMode === 'terrain') {
-      setEditorState(produce(draft => {
-        const tile = draft.terrainData[id];
-        tile.terrain = editorState.terrainSelect;
-      }));
-    } else if (editorState.editMode === 'road') {
-      if (editorState.roadMode === 'add node') {
-        setEditorState(produce(draft => {
-          const tailRoad = draft.roadData[draft.roadData.length - 1];
-          tailRoad.push(id);
-        }));
-      } else if (editorState.roadMode === 'delete node') {
-        setEditorState(produce(draft => {
-          const tailRoad = draft.roadData[draft.roadData.length - 1];
-          const idx = tailRoad.findIndex(el => el === id);
-          tailRoad.splice(idx, 1);
-        }));
-      } else {
-        setEditorState(produce(draft => {
-          draft.roadData = draft.roadData.filter(road => !road.includes(id));
-          if (draft.roadData.length === 0) {
-            draft.roadData = [[]];
-          }
-        }));
+  const roadIdList = editorState.roadData.filter((road) => road.length > 1);
+  const setTile = useCallback(
+    (id: string) => {
+      if (!editorState.terrainData[id]) {
+        console.log("Nonsense location", id);
+        return;
       }
-    } else {
-      const tile = editorState.terrainData[id];
-      console.log(`x:${tile.x}, y:${tile.y}, hi:${tile.elavation}`);
-    }
-  }, [editorState]);
+      if (editorState.editMode === "elavation") {
+        setEditorState(
+          produce((draft) => {
+            const tile = draft.terrainData[id];
+            tile.elavation = (tile.elavation + 1) % 4;
+          })
+        );
+      } else if (editorState.editMode === "terrain") {
+        setEditorState(
+          produce((draft) => {
+            const tile = draft.terrainData[id];
+            tile.terrain = editorState.terrainSelect;
+          })
+        );
+      } else if (editorState.editMode === "road") {
+        if (editorState.roadMode === "add node") {
+          setEditorState(
+            produce((draft) => {
+              const tailRoad = draft.roadData[draft.roadData.length - 1];
+              tailRoad.push(id);
+            })
+          );
+        } else if (editorState.roadMode === "delete node") {
+          setEditorState(
+            produce((draft) => {
+              const tailRoad = draft.roadData[draft.roadData.length - 1];
+              const idx = tailRoad.findIndex((el) => el === id);
+              tailRoad.splice(idx, 1);
+            })
+          );
+        } else {
+          setEditorState(
+            produce((draft) => {
+              draft.roadData = draft.roadData.filter(
+                (road) => !road.includes(id)
+              );
+              if (draft.roadData.length === 0) {
+                draft.roadData = [[]];
+              }
+            })
+          );
+        }
+      } else {
+        const tile = editorState.terrainData[id];
+        console.log(`x:${tile.x}, y:${tile.y}, hi:${tile.elavation}`);
+      }
+    },
+    [editorState]
+  );
 
   return (
     <Group name="tiles">
@@ -62,7 +77,12 @@ const MapEditor = () => {
         const pixel = Pos.add(origin, Pos.toPixel(d, size));
 
         return (
-          <Group key={d.id} x={pixel.x} y={pixel.y} onClick={() => setTile(d.id)}>
+          <Group
+            key={d.id}
+            x={pixel.x}
+            y={pixel.y}
+            onClick={() => setTile(d.id)}
+          >
             <RegularPolygon
               sides={6}
               radius={size}
@@ -77,7 +97,7 @@ const MapEditor = () => {
       })}
       {roadIdList.map((ids) => {
         const points: number[] = [];
-        ids.forEach(id => {
+        ids.forEach((id) => {
           const tile = editorState.terrainData[id];
           const pixel = Pos.add(origin, Pos.toPixel(tile, size));
           points.push(pixel.x, pixel.y);
@@ -95,7 +115,7 @@ const MapEditor = () => {
             lineJoin="round"
             listening={false}
           />
-        )
+        );
       })}
     </Group>
   );

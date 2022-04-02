@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { produce } from 'immer'
+import { produce } from "immer";
 import { useRecoilState } from "recoil";
 import { getTileId, TerrainTable } from "../engine/map_definition";
 import {
@@ -9,7 +9,7 @@ import {
   newTerrainTable,
 } from "../stores/map_editor";
 import { terrainNameMap } from "../constants";
-import { TWeather } from '../engine/weather';
+import { TWeather } from "../engine/weather";
 
 const roadModeList: TRoadMode[] = ["add node", "delete node", "delete road"];
 const weatherList: TWeather[] = ["dry", "mud", "h.mud", "snow"];
@@ -38,17 +38,22 @@ const MapEditorPanel = () => {
     [editorState]
   );
   const setMap = useCallback(() => {
-    setEditorState({
-      ...editorState,
-      width: sizeX,
-      height: sizeY,
-      terrainData: newTerrainTable(sizeX, sizeY),
-    });
-  }, [sizeX, sizeY]);
+    setEditorState(
+      produce((draft) => {
+        draft.width = sizeX;
+        draft.height = sizeY;
+        draft.terrainData = newTerrainTable(sizeX, sizeY);
+        draft.weatherPreview = "dry";
+        draft.roadData = [[]];
+      })
+    );
+  }, []);
   const setRoadMode = useCallback((mode: TRoadMode) => {
-    setEditorState(produce(draft => {
-      draft.roadMode = mode;
-    }));
+    setEditorState(
+      produce((draft) => {
+        draft.roadMode = mode;
+      })
+    );
   }, []);
   const setExport = useCallback(() => {
     const tiles = editorState.terrainData;
@@ -56,7 +61,7 @@ const MapEditorPanel = () => {
     Object.values(tiles).forEach((tile) => {
       exportTiles[getTileId(tile.x, tile.y)] = tile;
     });
-    const roadData = editorState.roadData.filter(road => road.length > 1);
+    const roadData = editorState.roadData.filter((road) => road.length > 1);
 
     const txt = JSON.stringify(
       {
@@ -71,14 +76,18 @@ const MapEditorPanel = () => {
     setTxt(txt);
   }, [editorState]);
   const setRoadDone = useCallback(() => {
-    setEditorState(produce(draft => {
-      draft.roadData.push([]);
-    }));
+    setEditorState(
+      produce((draft) => {
+        draft.roadData.push([]);
+      })
+    );
   }, []);
   const setWeather = useCallback((w: TWeather) => {
-    setEditorState(produce(draft => {
-      draft.weatherPreview = w;
-    }))
+    setEditorState(
+      produce((draft) => {
+        draft.weatherPreview = w;
+      })
+    );
   }, []);
 
   return (
@@ -154,10 +163,10 @@ const MapEditorPanel = () => {
           ))}
         </div>
       )}
-      {editorState.editMode === 'road' && <div>Roads</div>}
-      {editorState.editMode === 'road' && (
+      {editorState.editMode === "road" && <div>Roads</div>}
+      {editorState.editMode === "road" && (
         <div>
-          {roadModeList.map(mode => (
+          {roadModeList.map((mode) => (
             <label key={mode} className="block">
               <input
                 onChange={() => setRoadMode(mode)}
@@ -172,7 +181,9 @@ const MapEditorPanel = () => {
           <div>
             <button
               className="button"
-              disabled={editorState.roadData[editorState.roadData.length - 1].length < 2}
+              disabled={
+                editorState.roadData[editorState.roadData.length - 1].length < 2
+              }
               onClick={setRoadDone}
             >
               Finish Road
@@ -181,7 +192,7 @@ const MapEditorPanel = () => {
         </div>
       )}
       <div className="mt-2">Weather</div>
-      {weatherList.map(weather => (
+      {weatherList.map((weather) => (
         <label key={weather} className="block">
           <input
             onChange={() => setWeather(weather)}
