@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-export type TScene = 'title_screen' | 'map_editor' | 'hex_battle' | 'city_battle';
+export type TScene = 'title_screen' | 'map_editor' | 'hex_battle' | 'mini_battle';
 export interface IGame {
   currentScene: TScene;
 }
@@ -8,6 +8,6 @@ export interface IGame {
 export const gameState = atom<IGame>({
   key: 'game',
   default: {
-    currentScene: 'map_editor',
+    currentScene: 'mini_battle',
   },
 });

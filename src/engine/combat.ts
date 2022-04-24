@@ -28,3 +28,4 @@ combatOrgResultTable.set(-12, { min: 49, max: 66 });
 combatOrgResultTable.set(-13, { min: 53, max: 72 });
 combatOrgResultTable.set(-14, { min: 65, max: 85 });
 combatOrgResultTable.set(-15, { min: 80, max: 100 });
+combatOrgResultTable.set(-16, { min: 100, max: 120 });
