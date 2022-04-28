@@ -1,7 +1,6 @@
-import { Pos, IPos } from "./hex";
+import { Pos } from "./hex";
 import { HeapPriorityQueue } from "../pathfinding/definition";
-import { IElement } from "./elements";
-import { ITableOfElm, TypeBDiv } from "./toe";
+import { Unit } from "./unit";
 
 // terrain -1/impossible 0/wood 1/plain 2/water 3/mountain
 const terrainCostTable = new Map<number, number>();
@@ -30,57 +29,6 @@ export function newTile(x: number, y: number): TerrainTile {
 
 export function getTileId(x: number, y: number): string {
   return `${String(x).padStart(2, "0")}${String(y).padStart(2, "0")}`;
-}
-
-export interface Unit {
-  pos: IPos;
-  id: string;
-  name: string;
-  factionId: string;
-
-  cohesion: number;
-  movementPoint: number;
-  combatValue: number;
-  moral: number;
-  hp: number;
-  hpDamaged: number;
-  currentTOE: ITableOfElm;
-  nextTOE: ITableOfElm;
-  elements: IElement[];
-}
-
-let GID = 0;
-export default function gid(): string {
-  return (++GID).toString();
-}
-
-export function newUnit(
-  pos: IPos,
-  factionId: string,
-  options: Partial<Unit>
-): Unit {
-  const id = gid();
-
-  return {
-    ...options,
-    pos,
-    id,
-    factionId,
-    name: "",
-    cohesion: 60,
-    movementPoint: 6,
-    combatValue: 18,
-    moral: 45,
-    hp: 0,
-    hpDamaged: 0,
-    currentTOE: TypeBDiv,
-    nextTOE: TypeBDiv,
-    elements: [],
-  };
-}
-
-export interface UnitTable {
-  [id: string]: Unit;
 }
 
 export function getMovementCost(from: TerrainTile, to: TerrainTile) {
