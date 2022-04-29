@@ -11,7 +11,7 @@ export interface IWeaponList {
   [key: string]: IWeapon;
 }
 
-const weapons: IWeaponList = {
+export const weapons: IWeaponList = {
   hanyang_88: {
     fire: 8,
     shock: 6,
@@ -66,7 +66,7 @@ const weapons: IWeaponList = {
     rof: 1,
     range: 2,
     rangeOnly: true,
-    damage: 20
+    damage: 20,
   },
   kruppe_m1903: {
     fire: 10,
@@ -83,23 +83,32 @@ const weapons: IWeaponList = {
     range: 2,
     rangeOnly: true,
     damage: 25,
-  }
+  },
 };
 
-export type TBattalion = "infantry" | "cavalry" | "armor" | "artillery" | "mixed";
+export type TBattalion =
+  | "infantry"
+  | "cavalry"
+  | "armor"
+  | "artillery"
+  | "mixed"
+  | "logistic"
+  | "ambulance";
+export const BattalionTList: TBattalion[] = [
+  "infantry",
+  "cavalry",
+  "armor",
+  "artillery",
+  "mixed",
+  "logistic",
+  "ambulance",
+];
 
 export interface IElement {
   type: TBattalion;
   slotID: string;
   weapon: string;
   experience: number;
-}
-
-export function newInfantryElm(): IElement {
-  return {
-    type: "infantry",
-    slotID: "none",
-    weapon: "hanyang_88",
-    experience: 35,
-  };
+  hp: number;
+  hpDamaged: number;
 }

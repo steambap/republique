@@ -1,8 +1,8 @@
-import { Unit } from "../../engine/unit";
+import { IUnit, Unit } from "../../engine/unit";
 import { TerrainTile } from "../../engine/map_definition";
 
 interface IProps {
-  unit: Unit;
+  unit: IUnit;
   tile: TerrainTile;
 }
 
@@ -12,8 +12,9 @@ const MiniUnitInfo = ({ unit, tile }: IProps) => {
       <div>{`#${unit.id} (${unit.factionId})`}</div>
       <div>{unit.name}</div>
       <br />
-      <div>{`${unit.hp} men`}</div>
-      <div>{`moral: ${unit.moral}`}</div>
+      <div>{`${Unit.getHP(unit)} men`}</div>
+      <div>{`Moral: ${unit.moral}`}</div>
+      <div>{`Exp: ${Unit.getAvgExp(unit)}`}</div>
       <div>{`Cohesion: ${unit.cohesion} / ${unit.maxCohesion}`}</div>
       <div>---</div>
       <div>

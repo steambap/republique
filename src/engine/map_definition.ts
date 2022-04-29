@@ -1,6 +1,6 @@
 import { Pos } from "./hex";
 import { HeapPriorityQueue } from "../pathfinding/definition";
-import { Unit } from "./unit";
+import { IUnit } from "./unit";
 
 // terrain -1/impossible 0/wood 1/plain 2/water 3/mountain
 const terrainCostTable = new Map<number, number>();
@@ -85,8 +85,8 @@ function getNeigbours(
 
 export function findReachableCells(
   edges: Map<string, Map<string, number>>,
-  originUnit: Unit,
-  unitLoc: Map<string, Unit>,
+  originUnit: IUnit,
+  unitLoc: Map<string, IUnit>,
   width: number
 ): Map<string, Array<string>> {
   const { x, y } = originUnit.pos;
@@ -116,7 +116,7 @@ export function findReachableCells(
       const nbsOfNode = getNeigbours(edges, nb);
       nbsOfNode.forEach((id) => {
         if (unitLoc.has(id)) {
-          const unit = unitLoc.get(id) as Unit;
+          const unit = unitLoc.get(id) as IUnit;
           if (unit.factionId !== originUnit.factionId) {
             isEnemyZoc = true;
           }

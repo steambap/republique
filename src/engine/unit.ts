@@ -2,7 +2,9 @@ import { IPos } from "./hex";
 import { IElement } from "./elements";
 import { ITableOfElm, newElmsFromTOE, InfantryDivision } from "./toe";
 
-export interface Unit {
+export type TSpecial = "none" | "guard" | "elite" | "special" | "volunteer";
+
+export interface IUnit {
   pos: IPos;
   id: string;
   name: string;
@@ -12,8 +14,7 @@ export interface Unit {
   maxCohesion: number;
   movementPoint: number;
   moral: number;
-  hp: number;
-  hpDamaged: number;
+  special: TSpecial;
   currentTOE: ITableOfElm;
   nextTOE: ITableOfElm;
   elements: IElement[];
@@ -28,11 +29,10 @@ export function newUnit(
   pos: IPos,
   factionId: string,
   toe: ITableOfElm = InfantryDivision,
-  options: Partial<Unit>
-): Unit {
+  options: Partial<IUnit>
+): IUnit {
   const id = gid();
-  const elements = newElmsFromTOE(toe);
-  const hp = elements.length * 1000;
+  const elements = newElmsFromTOE(toe, options.moral);
 
   return {
     name: "",
@@ -40,8 +40,7 @@ export function newUnit(
     maxCohesion: 60,
     movementPoint: 6,
     moral: 45,
-    hp,
-    hpDamaged: 0,
+    special: "none",
     currentTOE: toe,
     nextTOE: toe,
     elements,
@@ -53,5 +52,29 @@ export function newUnit(
 }
 
 export interface UnitTable {
-  [id: string]: Unit;
+  [id: string]: IUnit;
 }
+
+function getHP(unit: IUnit): number {
+  return unit.elements.reduce((prev, cur) => {
+    return cur.hp + prev;
+  }, 0);
+}
+
+function getAvgExp(unit: IUnit): number {
+  const hp = getHP(unit);
+  if (hp <= 0) {
+    return 0;
+  }
+  let exps = 0;
+  unit.elements.forEach((elm) => {
+    exps += elm.hp * elm.experience;
+  });
+
+  return Math.floor(exps / hp);
+}
+
+export const Unit = {
+  getHP,
+  getAvgExp,
+};

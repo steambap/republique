@@ -1,11 +1,11 @@
 import { atom } from "recoil";
-import { Unit, newUnit } from "../engine/unit";
+import { IUnit, newUnit } from "../engine/unit";
 import { TypeADiv, TypeBDiv } from "../engine/toe";
 import { TerrainTile } from "../engine/map_definition";
 
 export interface IMiniBattle {
-  unit1: Unit;
-  unit2: Unit;
+  unit1: IUnit;
+  unit2: IUnit;
   unit1Terrain: TerrainTile;
   unit2Terrain: TerrainTile;
 }
@@ -25,7 +25,7 @@ export const miniBattleState = atom<IMiniBattle>({
   key: "mini_battle",
   default: {
     unit1: newUnit(unit1Terrain, "Qing", TypeADiv, { name: "unit1" }),
-    unit2: newUnit(unit2Terrain, "Fengtian", TypeBDiv, { name: "unit2" }),
+    unit2: newUnit(unit2Terrain, "Fengtian", TypeBDiv, { name: "unit2", moral:35 }),
     unit1Terrain,
     unit2Terrain,
   },
