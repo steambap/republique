@@ -1,9 +1,37 @@
+import { useCallback } from "react";
+import { produce } from "immer";
 import { useRecoilState } from "recoil";
 import { miniBattleState } from "../stores/mini_battle";
 import MiniUnitInfo from "./components/mini_unit_info";
+import { battle } from "../engine/combat";
 
 const MiniBattle = () => {
   const [battleState, setBattleState] = useRecoilState(miniBattleState);
+  const doBattle = useCallback(() => {
+    const combatResult = battle(
+      [battleState.unit1],
+      [battleState.unit2],
+      battleState.unit1Terrain,
+      battleState.unit2Terrain
+    );
+    const { attackerTable, defenderTable } = combatResult;
+    setBattleState(
+      produce((draft) => {
+        draft.log.push(`--->Battle start at ${Date.now()}<---`);
+        draft.log.push(...combatResult.log);
+        Object.keys(attackerTable).forEach((unitID) => {
+          if (unitID === battleState.unit1.id) {
+            draft.unit1 = attackerTable[unitID];
+          }
+        });
+        Object.keys(defenderTable).forEach((unitID) => {
+          if (unitID === battleState.unit2.id) {
+            draft.unit2 = defenderTable[unitID];
+          }
+        });
+      })
+    );
+  }, [battleState]);
   return (
     <div className="fixed top-0 bottom-0 left-0 right-0 flex justify-center">
       <div className="w-96 bg-slate-300 mr-2">
@@ -19,7 +47,7 @@ const MiniBattle = () => {
         </div>
         <div className="">
           <div className="mb-2">
-            <button className="button">Battle!</button>
+            <button className="button" onClick={() => doBattle()}>Battle!</button>
           </div>
           <div className="mb-4">
             <button className="button">Predict</button>
@@ -34,7 +62,9 @@ const MiniBattle = () => {
           </div>
         </div>
       </div>
-      <div className="w-96 bg-slate-200">log</div>
+      <div className="w-96 bg-slate-200 overflow-auto">
+        {battleState.log.map((text, idx) => <div key={idx}>{text}</div>)}
+      </div>
     </div>
   );
 };

@@ -32,14 +32,14 @@ export function newUnit(
   options: Partial<IUnit>
 ): IUnit {
   const id = gid();
-  const elements = newElmsFromTOE(toe, options.moral);
+  const elements = newElmsFromTOE(toe, id, options.moral);
 
   return {
     name: "",
     cohesion: 60,
     maxCohesion: 60,
     movementPoint: 6,
-    moral: 45,
+    moral: 50,
     special: "none",
     currentTOE: toe,
     nextTOE: toe,

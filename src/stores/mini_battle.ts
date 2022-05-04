@@ -8,15 +8,18 @@ export interface IMiniBattle {
   unit2: IUnit;
   unit1Terrain: TerrainTile;
   unit2Terrain: TerrainTile;
+  log: string[];
 }
 
-const unit1Terrain: TerrainTile = { 
-  x: 0, y: 0,
+const unit1Terrain: TerrainTile = {
+  x: 0,
+  y: 0,
   terrain: 1,
   elavation: 0,
 };
 const unit2Terrain = {
-  x: 1, y: 0,
+  x: 1,
+  y: 0,
   terrain: 1,
   elavation: 0,
 };
@@ -24,9 +27,13 @@ const unit2Terrain = {
 export const miniBattleState = atom<IMiniBattle>({
   key: "mini_battle",
   default: {
-    unit1: newUnit(unit1Terrain, "Qing", TypeADiv, { name: "unit1" }),
-    unit2: newUnit(unit2Terrain, "Fengtian", TypeBDiv, { name: "unit2", moral:35 }),
+    unit1: newUnit(unit1Terrain, "Qing", TypeADiv, { name: "unit1", moral: 45 }),
+    unit2: newUnit(unit2Terrain, "Fengtian", TypeBDiv, {
+      name: "unit2",
+      moral: 35,
+    }),
     unit1Terrain,
     unit2Terrain,
+    log: [],
   },
 });

@@ -84,7 +84,9 @@ export const weapons: IWeaponList = {
     rangeOnly: true,
     damage: 25,
   },
-};
+} as const;
+
+export type weaponNames = keyof typeof weapons;
 
 export type TBattalion =
   | "infantry"
@@ -107,6 +109,7 @@ export const BattalionTList: TBattalion[] = [
 export interface IElement {
   type: TBattalion;
   slotID: string;
+  unitID: string;
   weapon: string;
   experience: number;
   hp: number;

@@ -147,7 +147,11 @@ export const MixedBrigade: ITableOfElm = {
   },
 };
 
-export function newElmsFromTOE(toe: ITableOfElm, exp: number = 35) {
+export function newElmsFromTOE(
+  toe: ITableOfElm,
+  unitID: string,
+  experience: number = 35
+) {
   const elms: IElement[] = [];
   Object.keys(toe.slots).forEach((slotID) => {
     const { defaultWeapon } = toe.slots[slotID];
@@ -157,12 +161,17 @@ export function newElmsFromTOE(toe: ITableOfElm, exp: number = 35) {
     elms.push({
       type: toe.slots[slotID].type,
       slotID,
+      unitID,
       weapon: defaultWeapon,
-      experience: 35,
+      experience,
       hp: toe.slots[slotID].maxHP,
       hpDamaged: 0,
     });
   });
 
   return elms;
+}
+
+export function getMaxHP(toe: ITableOfElm, slotID: string): number {
+  return toe.slots[slotID].maxHP;
 }
