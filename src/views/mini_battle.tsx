@@ -33,7 +33,7 @@ const MiniBattle = () => {
     );
   }, [battleState]);
   return (
-    <div className="fixed top-0 bottom-0 left-0 right-0 flex justify-center">
+    <div className="flex justify-center h-screen overflow-hidden">
       <div className="w-96 bg-slate-300 mr-2">
         <div className="grid gap-4 grid-cols-2 grid-rows-1">
           <MiniUnitInfo

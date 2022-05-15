@@ -2,6 +2,8 @@ import { useCallback } from "react";
 import { produce } from "immer";
 import { Group, RegularPolygon, Line } from "react-konva";
 import { useRecoilState } from "recoil";
+import KonvaCanvas from "./konva_canvas";
+import MapEditorPanel from "./map_editor_panel";
 import { Pos } from "../engine/hex";
 import { mapEditorState } from "../stores/map_editor";
 import { size, origin, elavationColor } from "../constants";
@@ -72,52 +74,57 @@ const MapEditor = () => {
   );
 
   return (
-    <Group name="tiles">
-      {cellList.map((d) => {
-        const pixel = Pos.add(origin, Pos.toPixel(d, size));
+    <div id="map-editor">
+      <KonvaCanvas>
+        <Group name="tiles">
+          {cellList.map((d) => {
+            const pixel = Pos.add(origin, Pos.toPixel(d, size));
 
-        return (
-          <Group
-            key={d.id}
-            x={pixel.x}
-            y={pixel.y}
-            onClick={() => setTile(d.id)}
-          >
-            <RegularPolygon
-              sides={6}
-              radius={size}
-              fill={elavationColor[d.elavation]}
-              strokeWidth={2}
-              name="elavation"
-            />
-            <TerrainTile tile={d} />
-            <Weather weather={editorState.weatherPreview} tile={d} />
-          </Group>
-        );
-      })}
-      {roadIdList.map((ids) => {
-        const points: number[] = [];
-        ids.forEach((id) => {
-          const tile = editorState.terrainData[id];
-          const pixel = Pos.add(origin, Pos.toPixel(tile, size));
-          points.push(pixel.x, pixel.y);
-        });
+            return (
+              <Group
+                key={d.id}
+                x={pixel.x}
+                y={pixel.y}
+                onClick={() => setTile(d.id)}
+              >
+                <RegularPolygon
+                  sides={6}
+                  radius={size}
+                  fill={elavationColor[d.elavation]}
+                  strokeWidth={2}
+                  name="elavation"
+                />
+                <TerrainTile tile={d} />
+                <Weather weather={editorState.weatherPreview} tile={d} />
+              </Group>
+            );
+          })}
+          {roadIdList.map((ids) => {
+            const points: number[] = [];
+            ids.forEach((id) => {
+              const tile = editorState.terrainData[id];
+              const pixel = Pos.add(origin, Pos.toPixel(tile, size));
+              points.push(pixel.x, pixel.y);
+            });
 
-        return (
-          <Line
-            key={ids.join(",")}
-            points={points}
-            tension={0.5}
-            dash={[24, 10, 2, 10]}
-            stroke="black"
-            strokeWidth={4}
-            lineCap="round"
-            lineJoin="round"
-            listening={false}
-          />
-        );
-      })}
-    </Group>
+            return (
+              <Line
+                key={ids.join(",")}
+                points={points}
+                tension={0.5}
+                dash={[24, 10, 2, 10]}
+                stroke="black"
+                strokeWidth={4}
+                lineCap="round"
+                lineJoin="round"
+                listening={false}
+              />
+            );
+          })}
+        </Group>
+      </KonvaCanvas>
+      <MapEditorPanel />
+    </div>
   );
 };
 

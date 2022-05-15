@@ -5,6 +5,7 @@ export interface IWeapon {
   range: number;
   rangeOnly: boolean;
   damage: number;
+  damagePerEqp: number;
 }
 
 export interface IWeaponList {
@@ -19,46 +20,25 @@ export const weapons: IWeaponList = {
     range: 1,
     rangeOnly: false,
     damage: 15,
+    damagePerEqp: 0,
   },
-  hanyang_88_mixed: {
-    fire: 7,
-    shock: 7,
-    rof: 1,
-    range: 1,
-    rangeOnly: false,
-    damage: 10,
-  },
-  hanyang_88_cav: {
-    fire: 6,
+  xuantong_type_27: {
+    fire: 11,
     shock: 8,
     rof: 1,
     range: 1,
     rangeOnly: false,
-    damage: 20,
-  },
-  zb_26: {
-    fire: 10,
-    shock: 6,
-    rof: 1,
-    range: 1,
-    rangeOnly: false,
-    damage: 30,
-  },
-  type_24_HMG: {
-    fire: 11,
-    shock: 6,
-    rof: 1,
-    range: 1,
-    rangeOnly: false,
     damage: 40,
+    damagePerEqp: 0,
   },
-  type_36_HMG: {
+  xuantong_type_35: {
     fire: 11,
-    shock: 6,
+    shock: 8,
     rof: 2,
     range: 1,
     rangeOnly: false,
     damage: 40,
+    damagePerEqp: 0,
   },
   M1906: {
     fire: 9,
@@ -67,22 +47,16 @@ export const weapons: IWeaponList = {
     range: 2,
     rangeOnly: true,
     damage: 20,
+    damagePerEqp: 0,
   },
-  kruppe_m1903: {
+  xuantong_type_13: {
     fire: 10,
     shock: 0,
     rof: 1,
     range: 2,
     rangeOnly: true,
-    damage: 25,
-  },
-  bofors_m1930: {
-    fire: 10,
-    shock: 0,
-    rof: 1,
-    range: 2,
-    rangeOnly: true,
-    damage: 25,
+    damage: 0,
+    damagePerEqp: 6,
   },
 } as const;
 

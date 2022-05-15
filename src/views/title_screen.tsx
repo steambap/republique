@@ -1,10 +1,10 @@
 const TitleScreen = () => {
   return (
     <div
-      className="fixed top-0 bottom-0 left-0 right-0"
+      className="h-screen"
       style={{ backgroundImage: "url(title.webp)" }}
     >
-      <div className="ml-28 mt-24 text-left text-white">
+      <div className="pl-28 pt-24 text-left text-white">
         <h1
           className="text-8xl"
           style={{ textShadow: "1px 1px 2px hsl(180,90%,60%)" }}
