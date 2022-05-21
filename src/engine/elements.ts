@@ -13,6 +13,7 @@ export interface IWeaponList {
 }
 
 export const weapons: IWeaponList = {
+  // infantry
   hanyang_88: {
     fire: 8,
     shock: 6,
@@ -40,6 +41,26 @@ export const weapons: IWeaponList = {
     damage: 40,
     damagePerEqp: 0,
   },
+  // support
+  pistol: {
+    fire: 6,
+    shock: 6,
+    rof: 1,
+    range: 0,
+    rangeOnly: false,
+    damage: 10,
+    damagePerEqp: 0,
+  },
+  qingdao_mp18: {
+    fire: 6,
+    shock: 8,
+    rof: 2,
+    range: 0,
+    rangeOnly: false,
+    damage: 25,
+    damagePerEqp: 0,
+  },
+  // artillery
   M1906: {
     fire: 9,
     shock: 0,
@@ -84,7 +105,7 @@ export interface IElement {
   type: TBattalion;
   slotID: string;
   unitID: string;
-  weapon: string;
+  weaponID: string;
   experience: number;
   hp: number;
   hpDamaged: number;

@@ -2,10 +2,15 @@ import { produce } from "immer";
 import { IUnit, UnitTable } from "./unit";
 import { TerrainTile } from "./map_definition";
 import { IElement, weapons } from "./elements";
-import { getMaxHP } from "./toe";
+import { getMaxHP, getSlotMultiplier } from "./toe";
+import { clamp } from "../util";
 
 const phases = 7;
-const minHitChangce = 2;
+const minHitChance = 2;
+const maxHitChance = 90;
+const minFront = 3;
+const fireCoh = 0;
+const getHitCoh = 1.5;
 type TDamageRow = [number, number, number];
 const damageTable: TDamageRow[] = [
   [2, 10, 18],
@@ -47,7 +52,7 @@ function getFightRange(attackers: IUnit[], defenders: IUnit[]): number {
     }
     if (
       unit.elements.some((elm) => {
-        const weaponName = elm.weapon;
+        const weaponName = elm.weaponID;
         if (!weapons[weaponName]) {
           return false;
         }
@@ -97,7 +102,7 @@ function getFiringElms(unitTable: UnitTable): IElement[] {
 function getFiringElmsAtRange(unitTable: UnitTable, range: number): IElement[] {
   const elms = getFiringElms(unitTable);
   const elmsInRange = elms.filter((elm) => {
-    const weaponData = weapons[elm.weapon];
+    const weaponData = weapons[elm.weaponID];
 
     return weaponData.range >= range;
   });
@@ -122,7 +127,7 @@ function getTargetElms(unitTable: UnitTable): IElement[] {
     });
   }
 
-  if (combatTarget.length >= 5) {
+  if (combatTarget.length >= minFront) {
     return combatTarget;
   } else {
     return [...combatTarget, ...suppportTarget];
@@ -165,10 +170,10 @@ function generateHits(
     const element = attElements[i];
     const unit = attackerTable[element.unitID];
     const enemyElm = getRndElement(defTargets);
-    const weapon = weapons[element.weapon];
-    const rfp = weapon.fire;
+    const weapon = weapons[element.weaponID];
+    const rfp = range > 0 ? weapon.fire : weapon.shock;
     // Troop quality
-    const tqm = unit.moral / 22;
+    const tqm = unit.moral / 15;
     // Cohesion
     const missingCohPercent =
       (unit.maxCohesion - unit.cohesion) / unit.maxCohesion;
@@ -206,8 +211,12 @@ function generateHits(
     if (weapon.rangeOnly && range === 0) {
       rof = 0;
     }
+
+    rof *= getSlotMultiplier(unit.currentTOE, element.slotID);
+
     for (let i = 0; i < rof; i++) {
-      if (dice(100) < Math.max(hitChance, minHitChangce)) {
+      const chance = clamp(hitChance, minHitChance, maxHitChance);
+      if (dice(100) < chance) {
         // It's a hit
         hits.push({
           attacker: Object.assign({}, element),
@@ -249,7 +258,7 @@ function updateUnitsForHits(unitTable: UnitTable, hits: IHit[]) {
 
   ids.forEach((id) => {
     const unit = produce(unitTable[id], (draft) => {
-      draft.cohesion -= 2;
+      draft.cohesion -= fireCoh;
       if (draft.cohesion < 0) {
         draft.cohesion = 0;
       }
@@ -266,17 +275,17 @@ function receiveHits(
   let totalDisabled = 0;
   let totalKilled = 0;
   hits.forEach((hit) => {
-    const weapon = weapons[hit.attacker.weapon];
+    const weapon = weapons[hit.attacker.weaponID];
     const dmgRow = damageTable[range];
     const dmgBase = weapon.damage;
-    const { defender } = hit;
+    const { attacker ,defender } = hit;
     const defExp = (defender.experience - 20) / 100;
     const em = 0.5 * (1 - defExp);
     const wound = rnd(dmgRow[0] * dmgBase * em);
     const disabled = rnd(dmgRow[1] * dmgBase * em);
     const killed = rnd(dmgRow[2] * dmgBase * em);
     const unit = produce(unitTable[defender.unitID], (draft) => {
-      draft.cohesion -= 2;
+      draft.cohesion -= getHitCoh * (100 + attacker.experience) / 100;
       if (draft.cohesion < 0) {
         draft.cohesion = 0;
       }

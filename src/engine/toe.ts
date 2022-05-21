@@ -10,6 +10,7 @@ export interface ISlotData {
   // default weapon to use
   defaultWeapon: string;
   maxHP: number;
+  slotMultiplier: number;
 }
 
 export interface ITableOfElm {
@@ -23,28 +24,24 @@ export const infantry30Slot: ISlotData = {
   type: "infantry",
   fixed: false,
   defaultWeapon: "hanyang_88",
-  maxHP: 1128,
+  maxHP: 2256,
+  slotMultiplier: 3,
 };
 
-export const infantry36Slot: ISlotData = {
+export const infantry37Slot: ISlotData = {
   type: "infantry",
   fixed: false,
   defaultWeapon: "hanyang_88",
-  maxHP: 654,
-};
-
-export const infantry39Slot: ISlotData = {
-  type: "infantry",
-  fixed: false,
-  defaultWeapon: "hanyang_88",
-  maxHP: 784,
+  maxHP: 2352,
+  slotMultiplier: 3,
 };
 
 export const mixedSlot: ISlotData = {
   type: "mixed",
   fixed: true,
-  defaultWeapon: "hanyang_88_mixed",
-  maxHP: 602,
+  defaultWeapon: "hanyang_88",
+  maxHP: 1206,
+  slotMultiplier: 2,
 };
 
 export const artillerySlot: ISlotData = {
@@ -52,97 +49,56 @@ export const artillerySlot: ISlotData = {
   fixed: false,
   defaultWeapon: "",
   maxHP: 396,
+  slotMultiplier: 1,
 };
 
-export const logistic30Slot: ISlotData = {
+export const logisticSlot: ISlotData = {
   type: "logistic",
   fixed: true,
-  defaultWeapon: "hanyang_88_mixed",
+  defaultWeapon: "pistol",
   maxHP: 756,
+  slotMultiplier: 1,
 };
 
-export const logistic36Slot: ISlotData = {
+export const logisticAndMaintainceSlot: ISlotData = {
   type: "logistic",
   fixed: true,
-  defaultWeapon: "hanyang_88_mixed",
+  defaultWeapon: "pistol",
   maxHP: 1368,
-};
-
-export const TypeADiv: ITableOfElm = {
-  role: "combat",
-  slots: {
-    "1r_1b": infantry30Slot,
-    "1r_2b": infantry30Slot,
-    "2r_1b": infantry30Slot,
-    "2r_2b": infantry30Slot,
-    "3r_1b": infantry30Slot,
-    "3r_2b": infantry30Slot,
-    "4r_1b": infantry30Slot,
-    "4r_2b": infantry30Slot,
-    res: infantry30Slot,
-    support: logistic30Slot,
-  },
-};
-
-export const TypeBDiv: ITableOfElm = {
-  role: "combat",
-  slots: {
-    "1r_1b": infantry30Slot,
-    "1r_2b": infantry30Slot,
-    "2r_1b": infantry30Slot,
-    "2r_2b": infantry30Slot,
-    "3r_1b": infantry30Slot,
-    "3r_2b": infantry30Slot,
-    "4r_1b": infantry30Slot,
-    "4r_2b": infantry30Slot,
-    support: logistic30Slot,
-  },
-};
-
-export const TypeCDiv: ITableOfElm = {
-  role: "combat",
-  slots: {
-    "1r": infantry30Slot,
-    "2r": infantry30Slot,
-    "3r": infantry30Slot,
-    "4r": infantry30Slot,
-  },
+  slotMultiplier: 2,
 };
 
 export const InfantryDivision: ITableOfElm = {
   role: "combat",
   slots: {
-    "1r_1b": infantry36Slot,
-    "1r_2b": infantry36Slot,
-    "1r_3b": infantry36Slot,
-    "2r_1b": infantry36Slot,
-    "2r_2b": infantry36Slot,
-    "2r_3b": infantry36Slot,
-    "3r_1b": infantry36Slot,
-    "3r_2b": infantry36Slot,
-    "3r_3b": infantry36Slot,
-    support: logistic36Slot,
+    "1st": infantry30Slot,
+    "2nd": infantry30Slot,
+    "3rd": infantry30Slot,
+    support: logisticAndMaintainceSlot,
   },
 };
 
 export const ReserveDivision: ITableOfElm = {
   role: "combat",
   slots: {
-    "1r_1b": infantry36Slot,
-    "1r_2b": infantry36Slot,
-    "2r_1b": infantry36Slot,
-    "2r_2b": infantry36Slot,
-    "3r_1b": infantry36Slot,
-    "3r_2b": infantry36Slot,
+    "1st": infantry30Slot,
+    "2nd": infantry30Slot,
+    support: logisticSlot,
+  },
+};
+
+export const Brigade: ITableOfElm = {
+  role: "combat",
+  slots: {
+    "1st": infantry30Slot,
+    "2nd": infantry30Slot,
   },
 };
 
 export const MixedBrigade: ITableOfElm = {
-  role: "combat",
+  role: "multi",
   slots: {
-    "1r": infantry30Slot,
-    "2r": infantry30Slot,
-    "3r": infantry30Slot,
+    "1st": infantry30Slot,
     mixed: mixedSlot,
   },
 };
@@ -162,7 +118,7 @@ export function newElmsFromTOE(
       type: toe.slots[slotID].type,
       slotID,
       unitID,
-      weapon: defaultWeapon,
+      weaponID: defaultWeapon,
       experience,
       hp: toe.slots[slotID].maxHP,
       hpDamaged: 0,
@@ -174,4 +130,8 @@ export function newElmsFromTOE(
 
 export function getMaxHP(toe: ITableOfElm, slotID: string): number {
   return toe.slots[slotID].maxHP;
+}
+
+export function getSlotMultiplier(toe: ITableOfElm, slotID: string): number {
+  return toe.slots[slotID].slotMultiplier;
 }

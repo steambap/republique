@@ -15,7 +15,7 @@ const MiniUnitInfo = ({ unit, tile }: IProps) => {
       <div>{`${Unit.getHP(unit)} men`}</div>
       <div>{`Moral: ${unit.moral}`}</div>
       <div>{`Exp: ${Unit.getAvgExp(unit)}`}</div>
-      <div>{`Cohesion: ${unit.cohesion} / ${unit.maxCohesion}`}</div>
+      <div>{`Cohesion: ${unit.cohesion.toFixed(2)} / ${unit.maxCohesion}`}</div>
       <div>---</div>
       <div>
         <label className="block mb-2">
