@@ -5,7 +5,7 @@ import { IElement, weapons } from "./elements";
 import { getMaxHP, getSlotMultiplier } from "./toe";
 import { clamp } from "../util";
 
-const phases = 7;
+const phases = 14;
 const minHitChance = 2;
 const maxHitChance = 90;
 const minFront = 3;
@@ -40,35 +40,6 @@ function rnd(n: number): number {
 
 function dice(n: number): number {
   return rnd(n) + 1;
-}
-
-function getFightRange(attackers: IUnit[], defenders: IUnit[]): number {
-  const allUnits = [...attackers, ...defenders];
-  for (let i = 0; i < allUnits.length; i++) {
-    const unit = allUnits[i];
-    // Unit cannot fight
-    if (unit.cohesion === 0) {
-      continue;
-    }
-    if (
-      unit.elements.some((elm) => {
-        const weaponName = elm.weaponID;
-        if (!weapons[weaponName]) {
-          return false;
-        }
-        // No men left
-        if (elm.hp <= 0) {
-          return false;
-        }
-
-        return weapons[weaponName].range === 2;
-      })
-    ) {
-      return 2;
-    }
-  }
-
-  return 1;
 }
 
 // 0 -> draw 1,-1 -> attacker/defender route 2,-2 attacker/defender shatter
@@ -285,7 +256,7 @@ function receiveHits(
     const disabled = rnd(dmgRow[1] * dmgBase * em);
     const killed = rnd(dmgRow[2] * dmgBase * em);
     const unit = produce(unitTable[defender.unitID], (draft) => {
-      draft.cohesion -= getHitCoh * (100 + attacker.experience) / 100;
+      draft.cohesion -= getHitCoh * attacker.experience / 50;
       if (draft.cohesion < 0) {
         draft.cohesion = 0;
       }
@@ -325,10 +296,10 @@ export function battle(
     defenderTable[unit.id] = unit;
   });
 
-  let range = -1;
+  let range = 2;
   for (let i = 0; i < phases; i++) {
     if (range === -1) {
-      range = getFightRange(attackers, defenders);
+      range = 2;
     }
     log.push(`Day ${i + 1} start range at ${range}`);
     // Generate hits
