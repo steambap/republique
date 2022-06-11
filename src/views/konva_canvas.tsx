@@ -4,7 +4,7 @@ import { useRecoilBridgeAcrossReactRoots_UNSTABLE } from "recoil";
 import { Stage, Layer } from "react-konva";
 
 interface IProps {
-  children: ReactChild | ReactChildren;
+  children: ReactChild | ReactChild[];
 }
 
 const width = window.innerWidth;
