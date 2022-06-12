@@ -2,7 +2,7 @@ import { keyBy, forIn } from 'lodash';
 import { Group, Image, Circle, Text, Line } from "react-konva";
 import useImage from "use-image";
 import KonvaCanvas from "./konva_canvas";
-import cityData from "../maps/city_data.json";
+import cityData from "../maps/core.json";
 
 const { cityList, edges } = cityData;
 const cityTable = keyBy(cityList, "id");
@@ -21,7 +21,6 @@ forIn(edges, (connData, key) => {
     roadList.push([x1, y1, x2, y2]);
   });
 });
-console.log(roadList)
 
 const MainMap = () => {
   const [map_0_0] = useImage("/map/map-0-0.webp");
@@ -69,6 +68,7 @@ const MainMap = () => {
                 points={road}
                 stroke="black"
                 key={road.join(",")}
+                strokeWidth={0.5}
               />
             );
           })}
@@ -78,7 +78,7 @@ const MainMap = () => {
             return (
               <Group x={city.posX} y={city.posY} key={city.id}>
                 <Text text={city.name} x={-7 * city.name.length} y={-30} fontSize={14} />
-                <Circle fill="white" stroke="black" radius={12} />
+                <Circle fill="white" stroke="black" radius={12} strokeWidth={1} />
               </Group>
             );
           })}
