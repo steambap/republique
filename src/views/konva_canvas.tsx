@@ -1,5 +1,5 @@
 // Konva wrapper
-import React, { ReactChildren, ReactChild } from "react";
+import { ReactChild } from "react";
 import { useRecoilBridgeAcrossReactRoots_UNSTABLE } from "recoil";
 import { Stage, Layer } from "react-konva";
 

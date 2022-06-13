@@ -1,1146 +1,4 @@
 {
-  "cityList": [
-    {
-      "name": "兴安",
-      "posX": 2684,
-      "posY": 762,
-      "id": "0",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "哈尔滨",
-      "posX": 3271,
-      "posY": 1196,
-      "id": "1",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "佳木斯",
-      "posX": 3594,
-      "posY": 1071,
-      "id": "2",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "齐齐哈尔",
-      "posX": 3033,
-      "posY": 1006,
-      "id": "3",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "牡丹江",
-      "posX": 3529,
-      "posY": 1343,
-      "id": "4",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "吉林",
-      "posX": 3270,
-      "posY": 1434,
-      "id": "5",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "通化",
-      "posX": 3217,
-      "posY": 1679,
-      "id": "6",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "四平",
-      "posX": 3080,
-      "posY": 1518,
-      "id": "7",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "沈阳",
-      "posX": 2995,
-      "posY": 1678,
-      "id": "8",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "丹东",
-      "posX": 3080,
-      "posY": 1853,
-      "id": "9",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "锦州",
-      "posX": 2803,
-      "posY": 1754,
-      "id": "10",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "承德",
-      "posX": 2533,
-      "posY": 1758,
-      "id": "11",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "唐山",
-      "posX": 2554,
-      "posY": 1911,
-      "id": "12",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "张家口",
-      "posX": 2269,
-      "posY": 1787,
-      "id": "13",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "乌兰察布",
-      "posX": 2119,
-      "posY": 1753,
-      "id": "14",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "呼和浩特",
-      "posX": 1989,
-      "posY": 1777,
-      "id": "15",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "巴彦淖尔",
-      "posX": 1626,
-      "posY": 1790,
-      "id": "16",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "银川",
-      "posX": 1522,
-      "posY": 2083,
-      "id": "17",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "中卫",
-      "posX": 1435,
-      "posY": 2156,
-      "id": "18",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "平凉",
-      "posX": 1562,
-      "posY": 2354,
-      "id": "19",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "嘉峪关",
-      "posX": 831,
-      "posY": 1896,
-      "id": "20",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "兰州",
-      "posX": 1319,
-      "posY": 2303,
-      "id": "21",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "天水",
-      "posX": 1488,
-      "posY": 2452,
-      "id": "22",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "西宁",
-      "posX": 1143,
-      "posY": 2244,
-      "id": "23",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "格尔木",
-      "posX": 555,
-      "posY": 2264,
-      "id": "24",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "武威",
-      "posX": 1238,
-      "posY": 2142,
-      "id": "25",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "北京",
-      "posX": 2397,
-      "posY": 1883,
-      "id": "26",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "天津",
-      "posX": 2460,
-      "posY": 1967,
-      "id": "27",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "保定",
-      "posX": 2336,
-      "posY": 1982,
-      "id": "28",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "石家庄",
-      "posX": 2245,
-      "posY": 2090,
-      "id": "29",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "沧州",
-      "posX": 2429,
-      "posY": 2068,
-      "id": "30",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "济南",
-      "posX": 2446,
-      "posY": 2244,
-      "id": "31",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "青州",
-      "posX": 2633,
-      "posY": 2227,
-      "id": "32",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "青岛",
-      "posX": 2737,
-      "posY": 2297,
-      "id": "33",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "临沂",
-      "posX": 2565,
-      "posY": 2407,
-      "id": "34",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "兖州",
-      "posX": 2455,
-      "posY": 2354,
-      "id": "35",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "大同",
-      "posX": 2087,
-      "posY": 1925,
-      "id": "36",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "太原",
-      "posX": 2067,
-      "posY": 2107,
-      "id": "37",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "吕梁",
-      "posX": 1946,
-      "posY": 2147,
-      "id": "38",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "运城",
-      "posX": 1961,
-      "posY": 2337,
-      "id": "39",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "长治",
-      "posX": 2100,
-      "posY": 2320,
-      "id": "40",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "濮阳",
-      "posX": 2284,
-      "posY": 2335,
-      "id": "41",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "商丘",
-      "posX": 2331,
-      "posY": 2482,
-      "id": "42",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "郑州",
-      "posX": 2167,
-      "posY": 2432,
-      "id": "43",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "洛阳",
-      "posX": 2064,
-      "posY": 2443,
-      "id": "44",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "南阳",
-      "posX": 2061,
-      "posY": 2625,
-      "id": "45",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "信阳",
-      "posX": 2211,
-      "posY": 2709,
-      "id": "46",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "榆林",
-      "posX": 1830,
-      "posY": 2056,
-      "id": "47",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "延安",
-      "posX": 1802,
-      "posY": 2252,
-      "id": "48",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "西安",
-      "posX": 1760,
-      "posY": 2482,
-      "id": "49",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "汉中",
-      "posX": 1601,
-      "posY": 2614,
-      "id": "50",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "徐州",
-      "posX": 2479,
-      "posY": 2497,
-      "id": "51",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "淮安",
-      "posX": 2628,
-      "posY": 2557,
-      "id": "52",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "南京",
-      "posX": 2602,
-      "posY": 2722,
-      "id": "53",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "南通",
-      "posX": 2783,
-      "posY": 2716,
-      "id": "54",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "上海",
-      "posX": 2831,
-      "posY": 2804,
-      "id": "55",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "阜阳",
-      "posX": 2336,
-      "posY": 2626,
-      "id": "56",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "蚌埠",
-      "posX": 2466,
-      "posY": 2620,
-      "id": "57",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "合肥",
-      "posX": 2475,
-      "posY": 2739,
-      "id": "58",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "安庆",
-      "posX": 2459,
-      "posY": 2874,
-      "id": "59",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "襄阳",
-      "posX": 2027,
-      "posY": 2721,
-      "id": "60",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "宜昌",
-      "posX": 1958,
-      "posY": 2863,
-      "id": "61",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "武汉",
-      "posX": 2209,
-      "posY": 2880,
-      "id": "62",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "荆州",
-      "posX": 2040,
-      "posY": 2883,
-      "id": "63",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "重庆",
-      "posX": 1588,
-      "posY": 2890,
-      "id": "64",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "万州",
-      "posX": 1715,
-      "posY": 2842,
-      "id": "65",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "成都",
-      "posX": 1342,
-      "posY": 2857,
-      "id": "66",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "宜宾",
-      "posX": 1440,
-      "posY": 2984,
-      "id": "67",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "巴中",
-      "posX": 1579,
-      "posY": 2740,
-      "id": "68",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "康定",
-      "posX": 1157,
-      "posY": 2920,
-      "id": "69",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "马尔康",
-      "posX": 1163,
-      "posY": 2703,
-      "id": "70",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "广元",
-      "posX": 1494,
-      "posY": 2675,
-      "id": "71",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "昆明",
-      "posX": 1229,
-      "posY": 3406,
-      "id": "72",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "大理",
-      "posX": 1018,
-      "posY": 3353,
-      "id": "73",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "普洱",
-      "posX": 1086,
-      "posY": 3585,
-      "id": "74",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "贵阳",
-      "posX": 1562,
-      "posY": 3255,
-      "id": "75",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "毕节",
-      "posX": 1451,
-      "posY": 3186,
-      "id": "76",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "凯里",
-      "posX": 1697,
-      "posY": 3247,
-      "id": "77",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "桂林",
-      "posX": 1869,
-      "posY": 3382,
-      "id": "78",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "南宁",
-      "posX": 1715,
-      "posY": 3613,
-      "id": "79",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "梧州",
-      "posX": 1957,
-      "posY": 3557,
-      "id": "80",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "海口",
-      "posX": 1871,
-      "posY": 3869,
-      "id": "81",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "湛江",
-      "posX": 1870,
-      "posY": 3747,
-      "id": "82",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "广州",
-      "posX": 2138,
-      "posY": 3583,
-      "id": "83",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "韶关",
-      "posX": 2159,
-      "posY": 3437,
-      "id": "84",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "惠州",
-      "posX": 2235,
-      "posY": 3582,
-      "id": "85",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "潮州",
-      "posX": 2404,
-      "posY": 3545,
-      "id": "86",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "长沙",
-      "posX": 2109,
-      "posY": 3115,
-      "id": "87",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "衡阳",
-      "posX": 2093,
-      "posY": 3226,
-      "id": "88",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "常德",
-      "posX": 1989,
-      "posY": 3021,
-      "id": "89",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "怀化",
-      "posX": 1844,
-      "posY": 3161,
-      "id": "90",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "南昌",
-      "posX": 2356,
-      "posY": 3044,
-      "id": "91",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "吉安",
-      "posX": 2290,
-      "posY": 3164,
-      "id": "92",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "九江",
-      "posX": 2364,
-      "posY": 2950,
-      "id": "93",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "赣州",
-      "posX": 2287,
-      "posY": 3316,
-      "id": "94",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "福州",
-      "posX": 2656,
-      "posY": 3312,
-      "id": "95",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "厦门",
-      "posX": 2526,
-      "posY": 3460,
-      "id": "96",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "南平",
-      "posX": 2541,
-      "posY": 3176,
-      "id": "97",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "龙岩",
-      "posX": 2443,
-      "posY": 3394,
-      "id": "98",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "杭州",
-      "posX": 2709,
-      "posY": 2900,
-      "id": "99",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "宁波",
-      "posX": 2832,
-      "posY": 2938,
-      "id": "100",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "温州",
-      "posX": 2763,
-      "posY": 3117,
-      "id": "101",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "金华",
-      "posX": 2670,
-      "posY": 3010,
-      "id": "102",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "长春",
-      "posX": 3154,
-      "posY": 1422,
-      "id": "103",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "通辽",
-      "posX": 2895,
-      "posY": 1460,
-      "id": "104",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "邯郸",
-      "posX": 2240,
-      "posY": 2236,
-      "id": "105",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "许昌",
-      "posX": 2184,
-      "posY": 2526,
-      "id": "106",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "宝鸡",
-      "posX": 1607,
-      "posY": 2483,
-      "id": "107",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "昭通",
-      "posX": 1304,
-      "posY": 3196,
-      "id": "108",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "包头",
-      "posX": 1830,
-      "posY": 1802,
-      "id": "109",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "海州",
-      "posX": 2635,
-      "posY": 2464,
-      "id": "110",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "岳阳",
-      "posX": 2130,
-      "posY": 2993,
-      "id": "111",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "百色",
-      "posX": 1577,
-      "posY": 3520,
-      "id": "112",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    },
-    {
-      "name": "上饶",
-      "posX": 2565,
-      "posY": 3040,
-      "id": "113",
-      "owner": "0",
-      "supplyPt": 5,
-      "tradePt": 2,
-      "police": 100
-    }
-  ],
   "edges": {
     "0": {
       "3": {
@@ -2596,6 +1454,1148 @@
       "102": {
         "cost": 1
       }
+    }
+  },
+  "cityTable": {
+    "0": {
+      "name": "兴安",
+      "posX": 2684,
+      "posY": 762,
+      "id": "0",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "1": {
+      "name": "哈尔滨",
+      "posX": 3271,
+      "posY": 1196,
+      "id": "1",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "2": {
+      "name": "佳木斯",
+      "posX": 3594,
+      "posY": 1071,
+      "id": "2",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "3": {
+      "name": "齐齐哈尔",
+      "posX": 3033,
+      "posY": 1006,
+      "id": "3",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "4": {
+      "name": "牡丹江",
+      "posX": 3529,
+      "posY": 1343,
+      "id": "4",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "5": {
+      "name": "吉林",
+      "posX": 3270,
+      "posY": 1434,
+      "id": "5",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "6": {
+      "name": "通化",
+      "posX": 3217,
+      "posY": 1679,
+      "id": "6",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "7": {
+      "name": "四平",
+      "posX": 3080,
+      "posY": 1518,
+      "id": "7",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "8": {
+      "name": "沈阳",
+      "posX": 2995,
+      "posY": 1678,
+      "id": "8",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "9": {
+      "name": "丹东",
+      "posX": 3080,
+      "posY": 1853,
+      "id": "9",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "10": {
+      "name": "锦州",
+      "posX": 2803,
+      "posY": 1754,
+      "id": "10",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "11": {
+      "name": "承德",
+      "posX": 2533,
+      "posY": 1758,
+      "id": "11",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "12": {
+      "name": "唐山",
+      "posX": 2554,
+      "posY": 1911,
+      "id": "12",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "13": {
+      "name": "张家口",
+      "posX": 2269,
+      "posY": 1787,
+      "id": "13",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "14": {
+      "name": "乌兰察布",
+      "posX": 2119,
+      "posY": 1753,
+      "id": "14",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "15": {
+      "name": "呼和浩特",
+      "posX": 1989,
+      "posY": 1777,
+      "id": "15",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "16": {
+      "name": "巴彦淖尔",
+      "posX": 1626,
+      "posY": 1790,
+      "id": "16",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "17": {
+      "name": "银川",
+      "posX": 1522,
+      "posY": 2083,
+      "id": "17",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "18": {
+      "name": "中卫",
+      "posX": 1435,
+      "posY": 2156,
+      "id": "18",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "19": {
+      "name": "平凉",
+      "posX": 1562,
+      "posY": 2354,
+      "id": "19",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "20": {
+      "name": "嘉峪关",
+      "posX": 831,
+      "posY": 1896,
+      "id": "20",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "21": {
+      "name": "兰州",
+      "posX": 1319,
+      "posY": 2303,
+      "id": "21",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "22": {
+      "name": "天水",
+      "posX": 1488,
+      "posY": 2452,
+      "id": "22",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "23": {
+      "name": "西宁",
+      "posX": 1143,
+      "posY": 2244,
+      "id": "23",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "24": {
+      "name": "格尔木",
+      "posX": 555,
+      "posY": 2264,
+      "id": "24",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "25": {
+      "name": "武威",
+      "posX": 1238,
+      "posY": 2142,
+      "id": "25",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "26": {
+      "name": "北京",
+      "posX": 2397,
+      "posY": 1883,
+      "id": "26",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "27": {
+      "name": "天津",
+      "posX": 2460,
+      "posY": 1967,
+      "id": "27",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "28": {
+      "name": "保定",
+      "posX": 2336,
+      "posY": 1982,
+      "id": "28",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "29": {
+      "name": "石家庄",
+      "posX": 2245,
+      "posY": 2090,
+      "id": "29",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "30": {
+      "name": "沧州",
+      "posX": 2429,
+      "posY": 2068,
+      "id": "30",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "31": {
+      "name": "济南",
+      "posX": 2446,
+      "posY": 2244,
+      "id": "31",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "32": {
+      "name": "青州",
+      "posX": 2633,
+      "posY": 2227,
+      "id": "32",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "33": {
+      "name": "青岛",
+      "posX": 2737,
+      "posY": 2297,
+      "id": "33",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "34": {
+      "name": "临沂",
+      "posX": 2565,
+      "posY": 2407,
+      "id": "34",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "35": {
+      "name": "兖州",
+      "posX": 2455,
+      "posY": 2354,
+      "id": "35",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "36": {
+      "name": "大同",
+      "posX": 2087,
+      "posY": 1925,
+      "id": "36",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "37": {
+      "name": "太原",
+      "posX": 2067,
+      "posY": 2107,
+      "id": "37",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "38": {
+      "name": "吕梁",
+      "posX": 1946,
+      "posY": 2147,
+      "id": "38",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "39": {
+      "name": "运城",
+      "posX": 1961,
+      "posY": 2337,
+      "id": "39",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "40": {
+      "name": "长治",
+      "posX": 2100,
+      "posY": 2320,
+      "id": "40",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "41": {
+      "name": "濮阳",
+      "posX": 2284,
+      "posY": 2335,
+      "id": "41",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "42": {
+      "name": "商丘",
+      "posX": 2331,
+      "posY": 2482,
+      "id": "42",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "43": {
+      "name": "郑州",
+      "posX": 2167,
+      "posY": 2432,
+      "id": "43",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "44": {
+      "name": "洛阳",
+      "posX": 2064,
+      "posY": 2443,
+      "id": "44",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "45": {
+      "name": "南阳",
+      "posX": 2061,
+      "posY": 2625,
+      "id": "45",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "46": {
+      "name": "信阳",
+      "posX": 2211,
+      "posY": 2709,
+      "id": "46",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "47": {
+      "name": "榆林",
+      "posX": 1830,
+      "posY": 2056,
+      "id": "47",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "48": {
+      "name": "延安",
+      "posX": 1802,
+      "posY": 2252,
+      "id": "48",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "49": {
+      "name": "西安",
+      "posX": 1760,
+      "posY": 2482,
+      "id": "49",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "50": {
+      "name": "汉中",
+      "posX": 1601,
+      "posY": 2614,
+      "id": "50",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "51": {
+      "name": "徐州",
+      "posX": 2479,
+      "posY": 2497,
+      "id": "51",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "52": {
+      "name": "淮安",
+      "posX": 2628,
+      "posY": 2557,
+      "id": "52",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "53": {
+      "name": "南京",
+      "posX": 2602,
+      "posY": 2722,
+      "id": "53",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "54": {
+      "name": "南通",
+      "posX": 2783,
+      "posY": 2716,
+      "id": "54",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "55": {
+      "name": "上海",
+      "posX": 2831,
+      "posY": 2804,
+      "id": "55",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "56": {
+      "name": "阜阳",
+      "posX": 2336,
+      "posY": 2626,
+      "id": "56",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "57": {
+      "name": "蚌埠",
+      "posX": 2466,
+      "posY": 2620,
+      "id": "57",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "58": {
+      "name": "合肥",
+      "posX": 2475,
+      "posY": 2739,
+      "id": "58",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "59": {
+      "name": "安庆",
+      "posX": 2459,
+      "posY": 2874,
+      "id": "59",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "60": {
+      "name": "襄阳",
+      "posX": 2027,
+      "posY": 2721,
+      "id": "60",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "61": {
+      "name": "宜昌",
+      "posX": 1958,
+      "posY": 2863,
+      "id": "61",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "62": {
+      "name": "武汉",
+      "posX": 2209,
+      "posY": 2880,
+      "id": "62",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "63": {
+      "name": "荆州",
+      "posX": 2040,
+      "posY": 2883,
+      "id": "63",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "64": {
+      "name": "重庆",
+      "posX": 1588,
+      "posY": 2890,
+      "id": "64",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "65": {
+      "name": "万州",
+      "posX": 1715,
+      "posY": 2842,
+      "id": "65",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "66": {
+      "name": "成都",
+      "posX": 1342,
+      "posY": 2857,
+      "id": "66",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "67": {
+      "name": "宜宾",
+      "posX": 1440,
+      "posY": 2984,
+      "id": "67",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "68": {
+      "name": "巴中",
+      "posX": 1579,
+      "posY": 2740,
+      "id": "68",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "69": {
+      "name": "康定",
+      "posX": 1157,
+      "posY": 2920,
+      "id": "69",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "70": {
+      "name": "马尔康",
+      "posX": 1163,
+      "posY": 2703,
+      "id": "70",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "71": {
+      "name": "广元",
+      "posX": 1494,
+      "posY": 2675,
+      "id": "71",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "72": {
+      "name": "昆明",
+      "posX": 1229,
+      "posY": 3406,
+      "id": "72",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "73": {
+      "name": "大理",
+      "posX": 1018,
+      "posY": 3353,
+      "id": "73",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "74": {
+      "name": "普洱",
+      "posX": 1086,
+      "posY": 3585,
+      "id": "74",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "75": {
+      "name": "贵阳",
+      "posX": 1562,
+      "posY": 3255,
+      "id": "75",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "76": {
+      "name": "毕节",
+      "posX": 1451,
+      "posY": 3186,
+      "id": "76",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "77": {
+      "name": "凯里",
+      "posX": 1697,
+      "posY": 3247,
+      "id": "77",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "78": {
+      "name": "桂林",
+      "posX": 1869,
+      "posY": 3382,
+      "id": "78",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "79": {
+      "name": "南宁",
+      "posX": 1715,
+      "posY": 3613,
+      "id": "79",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "80": {
+      "name": "梧州",
+      "posX": 1957,
+      "posY": 3557,
+      "id": "80",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "81": {
+      "name": "海口",
+      "posX": 1871,
+      "posY": 3869,
+      "id": "81",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "82": {
+      "name": "湛江",
+      "posX": 1870,
+      "posY": 3747,
+      "id": "82",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "83": {
+      "name": "广州",
+      "posX": 2138,
+      "posY": 3583,
+      "id": "83",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "84": {
+      "name": "韶关",
+      "posX": 2159,
+      "posY": 3437,
+      "id": "84",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "85": {
+      "name": "惠州",
+      "posX": 2235,
+      "posY": 3582,
+      "id": "85",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "86": {
+      "name": "潮州",
+      "posX": 2404,
+      "posY": 3545,
+      "id": "86",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "87": {
+      "name": "长沙",
+      "posX": 2109,
+      "posY": 3115,
+      "id": "87",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "88": {
+      "name": "衡阳",
+      "posX": 2093,
+      "posY": 3226,
+      "id": "88",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "89": {
+      "name": "常德",
+      "posX": 1989,
+      "posY": 3021,
+      "id": "89",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "90": {
+      "name": "怀化",
+      "posX": 1844,
+      "posY": 3161,
+      "id": "90",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "91": {
+      "name": "南昌",
+      "posX": 2356,
+      "posY": 3044,
+      "id": "91",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "92": {
+      "name": "吉安",
+      "posX": 2290,
+      "posY": 3164,
+      "id": "92",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "93": {
+      "name": "九江",
+      "posX": 2364,
+      "posY": 2950,
+      "id": "93",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "94": {
+      "name": "赣州",
+      "posX": 2287,
+      "posY": 3316,
+      "id": "94",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "95": {
+      "name": "福州",
+      "posX": 2656,
+      "posY": 3312,
+      "id": "95",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "96": {
+      "name": "厦门",
+      "posX": 2526,
+      "posY": 3460,
+      "id": "96",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "97": {
+      "name": "南平",
+      "posX": 2541,
+      "posY": 3176,
+      "id": "97",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "98": {
+      "name": "龙岩",
+      "posX": 2443,
+      "posY": 3394,
+      "id": "98",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "99": {
+      "name": "杭州",
+      "posX": 2709,
+      "posY": 2900,
+      "id": "99",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "100": {
+      "name": "宁波",
+      "posX": 2832,
+      "posY": 2938,
+      "id": "100",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "101": {
+      "name": "温州",
+      "posX": 2763,
+      "posY": 3117,
+      "id": "101",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "102": {
+      "name": "金华",
+      "posX": 2670,
+      "posY": 3010,
+      "id": "102",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "103": {
+      "name": "长春",
+      "posX": 3154,
+      "posY": 1422,
+      "id": "103",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "104": {
+      "name": "通辽",
+      "posX": 2895,
+      "posY": 1460,
+      "id": "104",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "105": {
+      "name": "邯郸",
+      "posX": 2240,
+      "posY": 2236,
+      "id": "105",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "106": {
+      "name": "许昌",
+      "posX": 2184,
+      "posY": 2526,
+      "id": "106",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "107": {
+      "name": "宝鸡",
+      "posX": 1607,
+      "posY": 2483,
+      "id": "107",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "108": {
+      "name": "昭通",
+      "posX": 1304,
+      "posY": 3196,
+      "id": "108",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "109": {
+      "name": "包头",
+      "posX": 1830,
+      "posY": 1802,
+      "id": "109",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "110": {
+      "name": "海州",
+      "posX": 2635,
+      "posY": 2464,
+      "id": "110",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "111": {
+      "name": "岳阳",
+      "posX": 2130,
+      "posY": 2993,
+      "id": "111",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "112": {
+      "name": "百色",
+      "posX": 1577,
+      "posY": 3520,
+      "id": "112",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
+    },
+    "113": {
+      "name": "上饶",
+      "posX": 2565,
+      "posY": 3040,
+      "id": "113",
+      "owner": "0",
+      "supplyPt": 5,
+      "tradePt": 2,
+      "police": 100
     }
   }
 }
