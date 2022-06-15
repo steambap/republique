@@ -1,4 +1,39 @@
 {
+  "factionTable": {
+    "0": {
+      "id": "0",
+      "name": "大清",
+      "player": "human",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 8, 99, 156 )"
+    },
+    "1": {
+      "id": "1",
+      "name": "奉系",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 189, 113, 33 )"
+    },
+    "2": {
+      "id": "2",
+      "name": "晋系",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 42, 96, 59 )"
+    }
+  },
   "edges": {
     "0": {
       "3": {
@@ -1462,7 +1497,7 @@
       "posX": 2684,
       "posY": 762,
       "id": "0",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1472,7 +1507,7 @@
       "posX": 3271,
       "posY": 1196,
       "id": "1",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1482,7 +1517,7 @@
       "posX": 3594,
       "posY": 1071,
       "id": "2",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1492,7 +1527,7 @@
       "posX": 3033,
       "posY": 1006,
       "id": "3",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1502,7 +1537,7 @@
       "posX": 3529,
       "posY": 1343,
       "id": "4",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1512,7 +1547,7 @@
       "posX": 3270,
       "posY": 1434,
       "id": "5",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1522,7 +1557,7 @@
       "posX": 3217,
       "posY": 1679,
       "id": "6",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1532,7 +1567,7 @@
       "posX": 3080,
       "posY": 1518,
       "id": "7",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1542,7 +1577,7 @@
       "posX": 2995,
       "posY": 1678,
       "id": "8",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1552,7 +1587,7 @@
       "posX": 3080,
       "posY": 1853,
       "id": "9",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1562,7 +1597,7 @@
       "posX": 2803,
       "posY": 1754,
       "id": "10",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1822,7 +1857,7 @@
       "posX": 2087,
       "posY": 1925,
       "id": "36",
-      "owner": "0",
+      "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1832,7 +1867,7 @@
       "posX": 2067,
       "posY": 2107,
       "id": "37",
-      "owner": "0",
+      "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1842,7 +1877,7 @@
       "posX": 1946,
       "posY": 2147,
       "id": "38",
-      "owner": "0",
+      "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1852,7 +1887,7 @@
       "posX": 1961,
       "posY": 2337,
       "id": "39",
-      "owner": "0",
+      "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1932,7 +1967,7 @@
       "posX": 1830,
       "posY": 2056,
       "id": "47",
-      "owner": "0",
+      "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1942,7 +1977,7 @@
       "posX": 1802,
       "posY": 2252,
       "id": "48",
-      "owner": "0",
+      "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2492,7 +2527,7 @@
       "posX": 3154,
       "posY": 1422,
       "id": "103",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2502,7 +2537,7 @@
       "posX": 2895,
       "posY": 1460,
       "id": "104",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100

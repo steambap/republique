@@ -1,9 +1,16 @@
 import { useRecoilState, useRecoilValue, useRecoilCallback } from "recoil";
 import { Group, Image, Circle, Text, Line } from "react-konva";
-import { produce } from 'immer'
+import { produce } from "immer";
 import useImage from "use-image";
 import KonvaCanvas from "./konva_canvas";
-import { mainMapState, getCityList, getCurrentCity, getRoadList } from "../stores/main_map";
+import {
+  mainMapState,
+  getCityList,
+  getCurrentCity,
+  getRoadList,
+} from "../stores/main_map";
+import { tbsState, useEndTurn } from "../stores/turn_based";
+import { City } from "../engine/main_map";
 
 const MainMap = () => {
   const [map_0_0] = useImage("/map/map-0-0.webp");
@@ -23,14 +30,21 @@ const MainMap = () => {
   const [map_2_3] = useImage("/map/map-2-3.webp");
   const [map_3_3] = useImage("/map/map-3-3.webp");
   const [mapState, setMapState] = useRecoilState(mainMapState);
+  const [gameState, setGameState] = useRecoilState(tbsState);
   const cityList = useRecoilValue(getCityList);
   const currentCity = useRecoilValue(getCurrentCity);
   const roadList = useRecoilValue(getRoadList);
-  const onCitySelect = useRecoilCallback(() => (id: string) => {
-    setMapState(produce(draft => {
-      draft.citySelected = id;
-    }));
-  }, []);
+  const onCitySelect = useRecoilCallback(
+    () => (id: string) => {
+      setMapState(
+        produce((draft) => {
+          draft.citySelected = id;
+        })
+      );
+    },
+    []
+  );
+  const endTurn = useEndTurn();
 
   return (
     <div id="main-map">
@@ -70,7 +84,12 @@ const MainMap = () => {
           <Group name="city">
             {cityList.map((city) => {
               return (
-                <Group x={city.posX} y={city.posY} key={city.id} onClick={() => onCitySelect(city.id)}>
+                <Group
+                  x={city.posX}
+                  y={city.posY}
+                  key={city.id}
+                  onClick={() => onCitySelect(city.id)}
+                >
                   <Text
                     text={city.name}
                     x={-7 * city.name.length}
@@ -78,7 +97,7 @@ const MainMap = () => {
                     fontSize={14}
                   />
                   <Circle
-                    fill="white"
+                    fill={gameState.factionTable[city.owner].backgroundColor}
                     stroke="black"
                     radius={12}
                     strokeWidth={1}
@@ -90,10 +109,22 @@ const MainMap = () => {
         </Group>
       </KonvaCanvas>
       {currentCity && (
-      <div className="bg-slate-200 w-[300px] fixed top-0 left-0 bottom-0">
-        <div className="py-2">{`${currentCity.name} #${currentCity.id}`}</div>
-      </div>
+        <div className="bg-slate-200 w-[300px] fixed top-0 left-0 bottom-0">
+          <div className="py-2">{`${currentCity.name} #${currentCity.id}`}</div>
+          <div>{`贸易：${City.currentTrade(currentCity)} / ${currentCity.tradePt}`}</div>
+          <div>{`补给：${currentCity.supplyPt}`}</div>
+        </div>
       )}
+      <div className="bg-slate-200 w-[300px] fixed top-0 right-0 bottom-0">
+        <button
+          className="button"
+          onClick={endTurn}
+        >
+          End Turn
+        </button>
+        <div>{`Turn: ${gameState.turn}`}</div>
+        <div>{`Player: ${gameState.currentPlayer}`}</div>
+      </div>
     </div>
   );
 };

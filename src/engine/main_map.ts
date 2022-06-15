@@ -16,3 +16,11 @@ export interface edgeCost {
 }
 
 export type TEdges = Record<string, Record<string, edgeCost>>;
+
+function currentTrade(city: ICity) {
+  return Math.trunc((city.tradePt * city.police) / 100);
+}
+
+export const City = {
+  currentTrade,
+};
