@@ -9,3 +9,5 @@ export interface IFaction {
   action: number;
   backgroundColor: string;
 }
+
+export type FactionTable = Record<string, IFaction>;

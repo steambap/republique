@@ -10,7 +10,9 @@ import {
   getRoadList,
 } from "../stores/main_map";
 import { tbsState, useEndTurn } from "../stores/turn_based";
+import { aiState } from "../stores/ai";
 import { City } from "../engine/main_map";
+import AIView from "./ai_view";
 
 const MainMap = () => {
   const [map_0_0] = useImage("/map/map-0-0.webp");
@@ -45,6 +47,7 @@ const MainMap = () => {
     []
   );
   const endTurn = useEndTurn();
+  const [cpuState] = useRecoilState(aiState);
 
   return (
     <div id="main-map">
@@ -125,6 +128,7 @@ const MainMap = () => {
         <div>{`Turn: ${gameState.turn}`}</div>
         <div>{`Player: ${gameState.currentPlayer}`}</div>
       </div>
+      {Object.values(cpuState.aiStateTable).map(cpuData => <AIView computerState={cpuData} />)}
     </div>
   );
 };

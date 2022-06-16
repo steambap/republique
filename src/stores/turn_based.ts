@@ -1,10 +1,10 @@
 import { atom, useRecoilState } from "recoil";
 import { produce } from "immer";
-import { IFaction } from "../engine/faction";
+import { IFaction, FactionTable } from "../engine/faction";
 import core from "../maps/core.json";
 
 export interface ITBS {
-  factionTable: Record<string, IFaction>;
+  factionTable: FactionTable;
   turn: number;
   playerQueue: string[];
   currentPlayer: number;
@@ -14,7 +14,7 @@ export const tbsState = atom<ITBS>({
   key: "turn_based",
   default: {
     turn: 1,
-    factionTable: core.factionTable,
+    factionTable: core.factionTable as FactionTable,
     playerQueue: [],
     currentPlayer: -1,
   },
