@@ -32,6 +32,149 @@
       "influence": 0,
       "action": 0,
       "backgroundColor": "rgb( 42, 96, 59 )"
+    },
+    "3": {
+      "id": "3",
+      "name": "直鲁联军",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 204, 81, 39 )"
+    },
+    "4": {
+      "id": "4",
+      "name": "八省联军",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 255, 198, 0 )"
+    },
+    "5": {
+      "id": "5",
+      "name": "滇系",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 143, 40, 40 )"
+    },
+    "6": {
+      "id": "6",
+      "name": "川系",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 149, 123, 56 )"
+    },
+    "7": {
+      "id": "7",
+      "name": "宁夏马家军",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 105, 69, 85 )"
+    },
+    "8": {
+      "id": "8",
+      "name": "甘肃马家军",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 100, 180, 0 )"
+    },
+    "9": {
+      "id": "9",
+      "name": "青海马家军",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 153, 61, 0 )"
+    },
+    "10": {
+      "id": "10",
+      "name": "安庆政府",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 222, 247, 198 )"
+    },
+    "11": {
+      "id": "11",
+      "name": "湘系",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 80, 135, 224 )"
+    },
+    "12": {
+      "id": "12",
+      "name": "粤系",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 227, 207, 142 )"
+    },
+    "13": {
+      "id": "13",
+      "name": "桂系",
+      "player": "ai",
+      "countryStatus": "active",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 124, 140, 162 )"
+    },
+    "14": {
+      "id": "14",
+      "name": "国民政府",
+      "player": "ai",
+      "countryStatus": "inactive",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 222, 41, 16 )"
+    },
+    "15": {
+      "id": "15",
+      "name": "新疆",
+      "player": "ai",
+      "countryStatus": "inactive",
+      "supply": 0,
+      "gold": 0,
+      "influence": 0,
+      "action": 0,
+      "backgroundColor": "rgb( 214, 190, 74 )"
     }
   },
   "edges": {
@@ -1607,7 +1750,7 @@
       "posX": 2533,
       "posY": 1758,
       "id": "11",
-      "owner": "0",
+      "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1637,7 +1780,7 @@
       "posX": 2119,
       "posY": 1753,
       "id": "14",
-      "owner": "0",
+      "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1647,7 +1790,7 @@
       "posX": 1989,
       "posY": 1777,
       "id": "15",
-      "owner": "0",
+      "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1657,7 +1800,7 @@
       "posX": 1626,
       "posY": 1790,
       "id": "16",
-      "owner": "0",
+      "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1667,7 +1810,7 @@
       "posX": 1522,
       "posY": 2083,
       "id": "17",
-      "owner": "0",
+      "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1677,7 +1820,7 @@
       "posX": 1435,
       "posY": 2156,
       "id": "18",
-      "owner": "0",
+      "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1687,7 +1830,7 @@
       "posX": 1562,
       "posY": 2354,
       "id": "19",
-      "owner": "0",
+      "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1697,7 +1840,7 @@
       "posX": 831,
       "posY": 1896,
       "id": "20",
-      "owner": "0",
+      "owner": "8",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1707,7 +1850,7 @@
       "posX": 1319,
       "posY": 2303,
       "id": "21",
-      "owner": "0",
+      "owner": "8",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1717,7 +1860,7 @@
       "posX": 1488,
       "posY": 2452,
       "id": "22",
-      "owner": "0",
+      "owner": "8",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1727,7 +1870,7 @@
       "posX": 1143,
       "posY": 2244,
       "id": "23",
-      "owner": "0",
+      "owner": "9",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1737,7 +1880,7 @@
       "posX": 555,
       "posY": 2264,
       "id": "24",
-      "owner": "0",
+      "owner": "9",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1747,7 +1890,7 @@
       "posX": 1238,
       "posY": 2142,
       "id": "25",
-      "owner": "0",
+      "owner": "8",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1807,7 +1950,7 @@
       "posX": 2446,
       "posY": 2244,
       "id": "31",
-      "owner": "0",
+      "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1817,7 +1960,7 @@
       "posX": 2633,
       "posY": 2227,
       "id": "32",
-      "owner": "0",
+      "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1827,7 +1970,7 @@
       "posX": 2737,
       "posY": 2297,
       "id": "33",
-      "owner": "0",
+      "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1837,7 +1980,7 @@
       "posX": 2565,
       "posY": 2407,
       "id": "34",
-      "owner": "0",
+      "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -1847,7 +1990,7 @@
       "posX": 2455,
       "posY": 2354,
       "id": "35",
-      "owner": "0",
+      "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2007,7 +2150,7 @@
       "posX": 2479,
       "posY": 2497,
       "id": "51",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2017,7 +2160,7 @@
       "posX": 2628,
       "posY": 2557,
       "id": "52",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2027,7 +2170,7 @@
       "posX": 2602,
       "posY": 2722,
       "id": "53",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2037,7 +2180,7 @@
       "posX": 2783,
       "posY": 2716,
       "id": "54",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2047,7 +2190,7 @@
       "posX": 2831,
       "posY": 2804,
       "id": "55",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2057,7 +2200,7 @@
       "posX": 2336,
       "posY": 2626,
       "id": "56",
-      "owner": "0",
+      "owner": "10",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2067,7 +2210,7 @@
       "posX": 2466,
       "posY": 2620,
       "id": "57",
-      "owner": "0",
+      "owner": "10",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2077,7 +2220,7 @@
       "posX": 2475,
       "posY": 2739,
       "id": "58",
-      "owner": "0",
+      "owner": "10",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2087,7 +2230,7 @@
       "posX": 2459,
       "posY": 2874,
       "id": "59",
-      "owner": "0",
+      "owner": "10",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2137,7 +2280,7 @@
       "posX": 1588,
       "posY": 2890,
       "id": "64",
-      "owner": "0",
+      "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2147,7 +2290,7 @@
       "posX": 1715,
       "posY": 2842,
       "id": "65",
-      "owner": "0",
+      "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2157,7 +2300,7 @@
       "posX": 1342,
       "posY": 2857,
       "id": "66",
-      "owner": "0",
+      "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2167,7 +2310,7 @@
       "posX": 1440,
       "posY": 2984,
       "id": "67",
-      "owner": "0",
+      "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2177,7 +2320,7 @@
       "posX": 1579,
       "posY": 2740,
       "id": "68",
-      "owner": "0",
+      "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2187,7 +2330,7 @@
       "posX": 1157,
       "posY": 2920,
       "id": "69",
-      "owner": "0",
+      "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2197,7 +2340,7 @@
       "posX": 1163,
       "posY": 2703,
       "id": "70",
-      "owner": "0",
+      "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2207,7 +2350,7 @@
       "posX": 1494,
       "posY": 2675,
       "id": "71",
-      "owner": "0",
+      "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2217,7 +2360,7 @@
       "posX": 1229,
       "posY": 3406,
       "id": "72",
-      "owner": "0",
+      "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2227,7 +2370,7 @@
       "posX": 1018,
       "posY": 3353,
       "id": "73",
-      "owner": "0",
+      "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2237,7 +2380,7 @@
       "posX": 1086,
       "posY": 3585,
       "id": "74",
-      "owner": "0",
+      "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2247,7 +2390,7 @@
       "posX": 1562,
       "posY": 3255,
       "id": "75",
-      "owner": "0",
+      "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2257,7 +2400,7 @@
       "posX": 1451,
       "posY": 3186,
       "id": "76",
-      "owner": "0",
+      "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2267,7 +2410,7 @@
       "posX": 1697,
       "posY": 3247,
       "id": "77",
-      "owner": "0",
+      "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2277,7 +2420,7 @@
       "posX": 1869,
       "posY": 3382,
       "id": "78",
-      "owner": "0",
+      "owner": "13",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2287,7 +2430,7 @@
       "posX": 1715,
       "posY": 3613,
       "id": "79",
-      "owner": "0",
+      "owner": "13",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2297,7 +2440,7 @@
       "posX": 1957,
       "posY": 3557,
       "id": "80",
-      "owner": "0",
+      "owner": "13",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2307,7 +2450,7 @@
       "posX": 1871,
       "posY": 3869,
       "id": "81",
-      "owner": "0",
+      "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2317,7 +2460,7 @@
       "posX": 1870,
       "posY": 3747,
       "id": "82",
-      "owner": "0",
+      "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2327,7 +2470,7 @@
       "posX": 2138,
       "posY": 3583,
       "id": "83",
-      "owner": "0",
+      "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2337,7 +2480,7 @@
       "posX": 2159,
       "posY": 3437,
       "id": "84",
-      "owner": "0",
+      "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2347,7 +2490,7 @@
       "posX": 2235,
       "posY": 3582,
       "id": "85",
-      "owner": "0",
+      "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2357,7 +2500,7 @@
       "posX": 2404,
       "posY": 3545,
       "id": "86",
-      "owner": "0",
+      "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2367,7 +2510,7 @@
       "posX": 2109,
       "posY": 3115,
       "id": "87",
-      "owner": "0",
+      "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2377,7 +2520,7 @@
       "posX": 2093,
       "posY": 3226,
       "id": "88",
-      "owner": "0",
+      "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2387,7 +2530,7 @@
       "posX": 1989,
       "posY": 3021,
       "id": "89",
-      "owner": "0",
+      "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2397,7 +2540,7 @@
       "posX": 1844,
       "posY": 3161,
       "id": "90",
-      "owner": "0",
+      "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2407,7 +2550,7 @@
       "posX": 2356,
       "posY": 3044,
       "id": "91",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2417,7 +2560,7 @@
       "posX": 2290,
       "posY": 3164,
       "id": "92",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2427,7 +2570,7 @@
       "posX": 2364,
       "posY": 2950,
       "id": "93",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2437,7 +2580,7 @@
       "posX": 2287,
       "posY": 3316,
       "id": "94",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2447,7 +2590,7 @@
       "posX": 2656,
       "posY": 3312,
       "id": "95",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2457,7 +2600,7 @@
       "posX": 2526,
       "posY": 3460,
       "id": "96",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2467,7 +2610,7 @@
       "posX": 2541,
       "posY": 3176,
       "id": "97",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2477,7 +2620,7 @@
       "posX": 2443,
       "posY": 3394,
       "id": "98",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2487,7 +2630,7 @@
       "posX": 2709,
       "posY": 2900,
       "id": "99",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2497,7 +2640,7 @@
       "posX": 2832,
       "posY": 2938,
       "id": "100",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2507,7 +2650,7 @@
       "posX": 2763,
       "posY": 3117,
       "id": "101",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2517,7 +2660,7 @@
       "posX": 2670,
       "posY": 3010,
       "id": "102",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2577,7 +2720,7 @@
       "posX": 1304,
       "posY": 3196,
       "id": "108",
-      "owner": "0",
+      "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2587,7 +2730,7 @@
       "posX": 1830,
       "posY": 1802,
       "id": "109",
-      "owner": "0",
+      "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2597,7 +2740,7 @@
       "posX": 2635,
       "posY": 2464,
       "id": "110",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2607,7 +2750,7 @@
       "posX": 2130,
       "posY": 2993,
       "id": "111",
-      "owner": "0",
+      "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2617,7 +2760,7 @@
       "posX": 1577,
       "posY": 3520,
       "id": "112",
-      "owner": "0",
+      "owner": "13",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100
@@ -2627,7 +2770,7 @@
       "posX": 2565,
       "posY": 3040,
       "id": "113",
-      "owner": "0",
+      "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
       "police": 100

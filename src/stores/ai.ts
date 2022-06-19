@@ -1,17 +1,18 @@
 import { atom } from "recoil";
 import { mapValues } from "lodash";
-import { AIStateTable } from "../engine/ai";
+import { CPUStateTable } from "../engine/ai";
 import core from "../maps/core.json";
 
-const defaultTable: AIStateTable = mapValues(core.factionTable, () => ({
+const defaultTable: CPUStateTable = mapValues(core.factionTable, (faction) => ({
+  factionID: faction.id,
   logs: [],
 }));
 
-export interface IComputerState {
-  aiStateTable: AIStateTable;
+export interface ICPUProps {
+  aiStateTable: CPUStateTable;
 }
 
-export const aiState = atom<IComputerState>({
+export const cpuStore = atom<ICPUProps>({
   key: "ai_state",
   default: {
     aiStateTable: defaultTable,

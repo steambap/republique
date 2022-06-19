@@ -1,18 +1,22 @@
+import { useEffect } from "react";
 import { useRecoilState, useRecoilValue, useRecoilCallback } from "recoil";
 import { Group, Image, Circle, Text, Line } from "react-konva";
 import { produce } from "immer";
 import useImage from "use-image";
 import KonvaCanvas from "./konva_canvas";
 import {
-  mainMapState,
+  mainMapStore,
   getCityList,
   getCurrentCity,
   getRoadList,
 } from "../stores/main_map";
-import { tbsState, useEndTurn } from "../stores/turn_based";
-import { aiState } from "../stores/ai";
+import { tbsStore } from "../stores/turn_based";
+import { cpuStore } from "../stores/ai";
 import { City } from "../engine/main_map";
 import AIView from "./ai_view";
+import { useInitGame } from "../stores/turn_based";
+import EndTurn from "./components/end_turn";
+import FactionInfo from "./components/faction_info";
 
 const MainMap = () => {
   const [map_0_0] = useImage("/map/map-0-0.webp");
@@ -31,8 +35,8 @@ const MainMap = () => {
   const [map_1_3] = useImage("/map/map-1-3.webp");
   const [map_2_3] = useImage("/map/map-2-3.webp");
   const [map_3_3] = useImage("/map/map-3-3.webp");
-  const [mapState, setMapState] = useRecoilState(mainMapState);
-  const [gameState, setGameState] = useRecoilState(tbsState);
+  const [mapState, setMapState] = useRecoilState(mainMapStore);
+  const [gameState, setGameState] = useRecoilState(tbsStore);
   const cityList = useRecoilValue(getCityList);
   const currentCity = useRecoilValue(getCurrentCity);
   const roadList = useRecoilValue(getRoadList);
@@ -46,8 +50,11 @@ const MainMap = () => {
     },
     []
   );
-  const endTurn = useEndTurn();
-  const [cpuState] = useRecoilState(aiState);
+  const [cpuState] = useRecoilState(cpuStore);
+  const initGame = useInitGame();
+  useEffect(() => {
+    initGame();
+  }, []);
 
   return (
     <div id="main-map">
@@ -94,7 +101,7 @@ const MainMap = () => {
                   onClick={() => onCitySelect(city.id)}
                 >
                   <Text
-                    text={city.name}
+                    text={city.name + city.id}
                     x={-7 * city.name.length}
                     y={-30}
                     fontSize={14}
@@ -114,21 +121,17 @@ const MainMap = () => {
       {currentCity && (
         <div className="bg-slate-200 w-[300px] fixed top-0 left-0 bottom-0">
           <div className="py-2">{`${currentCity.name} #${currentCity.id}`}</div>
-          <div>{`贸易：${City.currentTrade(currentCity)} / ${currentCity.tradePt}`}</div>
+          <div>{`贸易：${City.currentTrade(currentCity)} / ${
+            currentCity.tradePt
+          }`}</div>
           <div>{`补给：${currentCity.supplyPt}`}</div>
         </div>
       )}
-      <div className="bg-slate-200 w-[300px] fixed top-0 right-0 bottom-0">
-        <button
-          className="button"
-          onClick={endTurn}
-        >
-          End Turn
-        </button>
-        <div>{`Turn: ${gameState.turn}`}</div>
-        <div>{`Player: ${gameState.currentPlayer}`}</div>
-      </div>
-      {Object.values(cpuState.aiStateTable).map(cpuData => <AIView computerState={cpuData} />)}
+      <FactionInfo />
+      <EndTurn />
+      {Object.entries(cpuState.aiStateTable).map(([id, cpuData]) => (
+        <AIView key={id} cpuState={cpuData} />
+      ))}
     </div>
   );
 };

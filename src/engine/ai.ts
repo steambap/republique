@@ -1,5 +1,6 @@
-export interface IAIState {
-  logs: [];
+export interface ICPUState {
+  factionID: string;
+  logs: string[];
 }
 
-export type AIStateTable = Record<string, IAIState>;
+export type CPUStateTable = Record<string, ICPUState>;
