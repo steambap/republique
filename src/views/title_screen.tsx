@@ -1,10 +1,11 @@
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 import { useRecoilState } from "recoil";
 import { produce } from "immer";
 import { gameStore } from "../stores/game";
+import License from "./license";
 
 const TitleScreen = () => {
-  const [_, setGameState] = useRecoilState(gameStore);
+  const [gameState, setGameState] = useRecoilState(gameStore);
   const newGame = useCallback(() => {
     setGameState(
       produce((draft) => {
@@ -19,6 +20,14 @@ const TitleScreen = () => {
       })
     );
   }, []);
+  const setVolumn = useCallback((val) => {
+    setGameState(produce(draft => {
+      const newVolumn = parseInt(val, 10) || 0;
+      draft.volumn = newVolumn;
+    }))
+  }, []);
+  const configModal = useRef<HTMLDialogElement>(null);
+  const licenseModal = useRef<HTMLDialogElement>(null);
 
   return (
     <div className="h-screen hex-background">
@@ -38,11 +47,47 @@ const TitleScreen = () => {
         <button className="button text-xl mb-10" onClick={quickStart}>
           快速开始
         </button>
-        <button className="button text-xl mb-10" disabled>读取进度</button>
-        <button className="button text-xl mb-10" disabled>设置</button>
-        <button className="button text-xl mb-10" disabled>许可</button>
-        <button className="button text-xl" disabled>退出游戏</button>
+        <button className="button text-xl mb-10" disabled>
+          读取进度
+        </button>
+        <button
+          className="button text-xl mb-10"
+          onClick={() => configModal.current?.showModal()}
+        >
+          设置
+        </button>
+        <button
+          className="button text-xl"
+          onClick={() => licenseModal.current?.showModal()}
+        >
+          许可
+        </button>
       </div>
+      <dialog ref={configModal}>
+        <div className="flex">
+          <div className="mr-4">音量</div>
+          <input type="range" min="0" max="100" value={gameState.volumn} onChange={e => setVolumn(e.target.value)} />
+        </div>
+        <div>
+          <button
+            className="button mt-10"
+            onClick={() => configModal.current?.close()}
+          >
+            关闭
+          </button>
+        </div>
+      </dialog>
+      <dialog ref={licenseModal}>
+        <License />
+        <div>
+          <button
+            className="button mt-10"
+            onClick={() => licenseModal.current?.close()}
+          >
+            好的
+          </button>
+        </div>
+      </dialog>
     </div>
   );
 };
