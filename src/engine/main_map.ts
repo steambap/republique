@@ -7,6 +7,7 @@ export interface ICity {
   supplyPt: number;
   tradePt: number;
   police: number;
+  population: number;
 }
 
 export type CityTable = Record<string, ICity>;

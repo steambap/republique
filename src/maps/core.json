@@ -1643,6 +1643,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 21,
       "police": 100
     },
     "1": {
@@ -1653,6 +1654,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 739,
       "police": 100
     },
     "2": {
@@ -1663,6 +1665,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 137,
       "police": 100
     },
     "3": {
@@ -1673,6 +1676,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 75,
       "police": 100
     },
     "4": {
@@ -1683,6 +1687,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 276,
       "police": 100
     },
     "5": {
@@ -1693,6 +1698,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 155,
       "police": 100
     },
     "6": {
@@ -1703,6 +1709,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 76,
       "police": 100
     },
     "7": {
@@ -1713,6 +1720,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 166,
       "police": 100
     },
     "8": {
@@ -1723,6 +1731,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1052,
       "police": 100
     },
     "9": {
@@ -1733,6 +1742,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 127,
       "police": 100
     },
     "10": {
@@ -1743,6 +1753,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 270,
       "police": 100
     },
     "11": {
@@ -1753,6 +1764,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 231,
       "police": 100
     },
     "12": {
@@ -1763,6 +1775,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 296,
       "police": 100
     },
     "13": {
@@ -1773,6 +1786,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 147,
       "police": 100
     },
     "14": {
@@ -1783,6 +1797,7 @@
       "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 57,
       "police": 100
     },
     "15": {
@@ -1793,6 +1808,7 @@
       "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 163,
       "police": 100
     },
     "16": {
@@ -1803,6 +1819,7 @@
       "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 55,
       "police": 100
     },
     "17": {
@@ -1813,6 +1830,7 @@
       "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 71,
       "police": 100
     },
     "18": {
@@ -1823,6 +1841,7 @@
       "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 31,
       "police": 100
     },
     "19": {
@@ -1833,6 +1852,7 @@
       "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 189,
       "police": 100
     },
     "20": {
@@ -1843,6 +1863,7 @@
       "owner": "8",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 53,
       "police": 100
     },
     "21": {
@@ -1853,6 +1874,7 @@
       "owner": "8",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 266,
       "police": 100
     },
     "22": {
@@ -1863,6 +1885,7 @@
       "owner": "8",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 193,
       "police": 100
     },
     "23": {
@@ -1873,6 +1896,7 @@
       "owner": "9",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 79,
       "police": 100
     },
     "24": {
@@ -1883,6 +1907,7 @@
       "owner": "9",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 40,
       "police": 100
     },
     "25": {
@@ -1893,6 +1918,7 @@
       "owner": "8",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 115,
       "police": 100
     },
     "26": {
@@ -1903,6 +1929,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1053,
       "police": 100
     },
     "27": {
@@ -1913,6 +1940,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 341,
       "police": 100
     },
     "28": {
@@ -1923,6 +1951,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 717,
       "police": 100
     },
     "29": {
@@ -1933,6 +1962,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 597,
       "police": 100
     },
     "30": {
@@ -1943,6 +1973,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 508,
       "police": 100
     },
     "31": {
@@ -1953,6 +1984,7 @@
       "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 623,
       "police": 100
     },
     "32": {
@@ -1963,6 +1995,7 @@
       "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 373,
       "police": 100
     },
     "33": {
@@ -1973,6 +2006,7 @@
       "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 542,
       "police": 100
     },
     "34": {
@@ -1983,6 +2017,7 @@
       "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1533,
       "police": 100
     },
     "35": {
@@ -1993,6 +2028,7 @@
       "owner": "3",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 565,
       "police": 100
     },
     "36": {
@@ -2003,6 +2039,7 @@
       "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 272,
       "police": 100
     },
     "37": {
@@ -2013,6 +2050,7 @@
       "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 352,
       "police": 100
     },
     "38": {
@@ -2023,6 +2061,7 @@
       "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 145,
       "police": 100
     },
     "39": {
@@ -2033,6 +2072,7 @@
       "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 203,
       "police": 100
     },
     "40": {
@@ -2043,6 +2083,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 276,
       "police": 100
     },
     "41": {
@@ -2053,6 +2094,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 189,
       "police": 100
     },
     "42": {
@@ -2063,6 +2105,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 509,
       "police": 100
     },
     "43": {
@@ -2073,6 +2116,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1008,
       "police": 100
     },
     "44": {
@@ -2083,6 +2127,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 596,
       "police": 100
     },
     "45": {
@@ -2093,6 +2138,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 459,
       "police": 100
     },
     "46": {
@@ -2103,6 +2149,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 293,
       "police": 100
     },
     "47": {
@@ -2113,6 +2160,7 @@
       "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 273,
       "police": 100
     },
     "48": {
@@ -2123,6 +2171,7 @@
       "owner": "2",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 177,
       "police": 100
     },
     "49": {
@@ -2133,6 +2182,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 429,
       "police": 100
     },
     "50": {
@@ -2143,6 +2193,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 112,
       "police": 100
     },
     "51": {
@@ -2153,6 +2204,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 291,
       "police": 100
     },
     "52": {
@@ -2163,6 +2215,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 272,
       "police": 100
     },
     "53": {
@@ -2173,6 +2226,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1932,
       "police": 100
     },
     "54": {
@@ -2183,6 +2237,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 461,
       "police": 100
     },
     "55": {
@@ -2193,6 +2248,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 473,
       "police": 100
     },
     "56": {
@@ -2203,6 +2259,7 @@
       "owner": "10",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 569,
       "police": 100
     },
     "57": {
@@ -2213,6 +2270,7 @@
       "owner": "10",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 231,
       "police": 100
     },
     "58": {
@@ -2223,6 +2281,7 @@
       "owner": "10",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1616,
       "police": 100
     },
     "59": {
@@ -2233,6 +2292,7 @@
       "owner": "10",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 713,
       "police": 100
     },
     "60": {
@@ -2243,6 +2303,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 436,
       "police": 100
     },
     "61": {
@@ -2253,6 +2314,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 337,
       "police": 100
     },
     "62": {
@@ -2263,6 +2325,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1134,
       "police": 100
     },
     "63": {
@@ -2273,6 +2336,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 433,
       "police": 100
     },
     "64": {
@@ -2283,6 +2347,7 @@
       "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1825,
       "police": 100
     },
     "65": {
@@ -2293,6 +2358,7 @@
       "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 178,
       "police": 100
     },
     "66": {
@@ -2303,6 +2369,7 @@
       "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 2107,
       "police": 100
     },
     "67": {
@@ -2313,6 +2380,7 @@
       "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 459,
       "police": 100
     },
     "68": {
@@ -2323,6 +2391,7 @@
       "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 169,
       "police": 100
     },
     "69": {
@@ -2333,6 +2402,7 @@
       "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 57,
       "police": 100
     },
     "70": {
@@ -2343,6 +2413,7 @@
       "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 70,
       "police": 100
     },
     "71": {
@@ -2353,6 +2424,7 @@
       "owner": "6",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 142,
       "police": 100
     },
     "72": {
@@ -2363,6 +2435,7 @@
       "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 389,
       "police": 100
     },
     "73": {
@@ -2373,6 +2446,7 @@
       "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 366,
       "police": 100
     },
     "74": {
@@ -2383,6 +2457,7 @@
       "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 110,
       "police": 100
     },
     "75": {
@@ -2393,6 +2468,7 @@
       "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 470,
       "police": 100
     },
     "76": {
@@ -2403,6 +2479,7 @@
       "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 182,
       "police": 100
     },
     "77": {
@@ -2413,6 +2490,7 @@
       "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 301,
       "police": 100
     },
     "78": {
@@ -2423,6 +2501,7 @@
       "owner": "13",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 445,
       "police": 100
     },
     "79": {
@@ -2433,6 +2512,7 @@
       "owner": "13",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 385,
       "police": 100
     },
     "80": {
@@ -2443,6 +2523,7 @@
       "owner": "13",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 171,
       "police": 100
     },
     "81": {
@@ -2453,6 +2534,7 @@
       "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 254,
       "police": 100
     },
     "82": {
@@ -2463,6 +2545,7 @@
       "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 315,
       "police": 100
     },
     "83": {
@@ -2473,6 +2556,7 @@
       "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 1675,
       "police": 100
     },
     "84": {
@@ -2483,6 +2567,7 @@
       "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 557,
       "police": 100
     },
     "85": {
@@ -2493,6 +2578,7 @@
       "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 497,
       "police": 100
     },
     "86": {
@@ -2503,6 +2589,7 @@
       "owner": "12",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 455,
       "police": 100
     },
     "87": {
@@ -2513,6 +2600,7 @@
       "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 823,
       "police": 100
     },
     "88": {
@@ -2523,6 +2611,7 @@
       "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 534,
       "police": 100
     },
     "89": {
@@ -2533,6 +2622,7 @@
       "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 709,
       "police": 100
     },
     "90": {
@@ -2543,6 +2633,7 @@
       "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 368,
       "police": 100
     },
     "91": {
@@ -2553,6 +2644,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 292,
       "police": 100
     },
     "92": {
@@ -2563,6 +2655,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 112,
       "police": 100
     },
     "93": {
@@ -2573,6 +2666,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 170,
       "police": 100
     },
     "94": {
@@ -2583,6 +2677,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 337,
       "police": 100
     },
     "95": {
@@ -2593,6 +2688,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 335,
       "police": 100
     },
     "96": {
@@ -2603,6 +2699,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 169,
       "police": 100
     },
     "97": {
@@ -2613,6 +2710,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 445,
       "police": 100
     },
     "98": {
@@ -2623,6 +2721,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 224,
       "police": 100
     },
     "99": {
@@ -2633,6 +2732,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 963,
       "police": 100
     },
     "100": {
@@ -2643,6 +2743,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 730,
       "police": 100
     },
     "101": {
@@ -2653,6 +2754,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 410,
       "police": 100
     },
     "102": {
@@ -2663,6 +2765,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 411,
       "police": 100
     },
     "103": {
@@ -2673,6 +2776,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 388,
       "police": 100
     },
     "104": {
@@ -2683,6 +2787,7 @@
       "owner": "1",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 261,
       "police": 100
     },
     "105": {
@@ -2693,6 +2798,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 353,
       "police": 100
     },
     "106": {
@@ -2703,6 +2809,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 219,
       "police": 100
     },
     "107": {
@@ -2713,6 +2820,7 @@
       "owner": "0",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 81,
       "police": 100
     },
     "108": {
@@ -2723,6 +2831,7 @@
       "owner": "5",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 234,
       "police": 100
     },
     "109": {
@@ -2733,6 +2842,7 @@
       "owner": "7",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 67,
       "police": 100
     },
     "110": {
@@ -2743,6 +2853,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 148,
       "police": 100
     },
     "111": {
@@ -2753,6 +2864,7 @@
       "owner": "11",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 406,
       "police": 100
     },
     "112": {
@@ -2763,6 +2875,7 @@
       "owner": "13",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 145,
       "police": 100
     },
     "113": {
@@ -2773,6 +2886,7 @@
       "owner": "4",
       "supplyPt": 5,
       "tradePt": 2,
+      "population": 145,
       "police": 100
     }
   }

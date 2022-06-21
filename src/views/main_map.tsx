@@ -124,7 +124,7 @@ const MainMap = () => {
           <div>{`贸易：${City.currentTrade(currentCity)} / ${
             currentCity.tradePt
           }`}</div>
-          <div>{`补给：${currentCity.supplyPt}`}</div>
+          <div>{`人口：${currentCity.population}`}</div>
         </div>
       )}
       <FactionInfo />
