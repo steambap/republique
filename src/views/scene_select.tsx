@@ -3,10 +3,14 @@ import { useRecoilState } from "recoil";
 import { produce } from "immer";
 import { tbsStore } from "../stores/turn_based";
 import { gameStore } from "../stores/game";
+import { mainMapStore } from "../stores/main_map";
+import { getTotalPop } from "../engine/main_map";
+import { getSupplyIncome, getGoldIncome } from "../engine/faction_ext";
 
 const SceneSelect = () => {
   const [id, setID] = useState("0");
   const [tbsState, setTBSState] = useRecoilState(tbsStore);
+  const [mapState] = useRecoilState(mainMapStore);
   const [_, setGameState] = useRecoilState(gameStore);
   const setPlayer = useCallback((id: string) => {
     setID(id);
@@ -57,6 +61,9 @@ const SceneSelect = () => {
             <span className="text-lg">{displayFaction.name}</span>
             <span className="text-gray-600">{` (#${displayFaction.id})`}</span>
           </div>
+          <div>{`总人口：${getTotalPop(displayFaction.id, mapState.cityTable)} 万`}</div>
+          <div>{`补给收入：${getSupplyIncome(displayFaction, mapState.cityTable).toFixed(2)}`}</div>
+          <div>{`金钱收入：${getGoldIncome(displayFaction, mapState.cityTable).toFixed(2)}`}</div>
         </div>
         <div className="bg-gray-900 p-10 mt-10">
           <button className="button h-10 w-32" onClick={() => startGame(id)}>

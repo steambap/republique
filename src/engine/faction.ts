@@ -8,6 +8,7 @@ export interface IFaction {
   influence: number;
   action: number;
   backgroundColor: string;
+  reformPt: number;
 }
 
 export type FactionTable = Record<string, IFaction>;

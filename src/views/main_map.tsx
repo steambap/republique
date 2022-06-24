@@ -125,6 +125,8 @@ const MainMap = () => {
             currentCity.tradePt
           }`}</div>
           <div>{`人口：${currentCity.population}`}</div>
+          <div>{`政治：${currentCity.politicalPt}`}</div>
+          <div>{`土改等级：${currentCity.level}`}</div>
         </div>
       )}
       <FactionInfo />

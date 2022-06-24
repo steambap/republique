@@ -13,7 +13,7 @@ export interface IGame {
 export const gameStore = atom<IGame>({
   key: "game",
   default: {
-    currentScene: "title_screen",
+    currentScene: "main_map",
     volumn: 100,
   },
 });
