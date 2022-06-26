@@ -1,7 +1,58 @@
-
+// This is file is generated. DO NOT EDIT.
 const License = () => (
   <div className="text-left max-w-xl h-96 overflow-auto">
   <p>THE FOLLOWING SETS FORTH ATTRIBUTION NOTICES FOR THIRD PARTY SOFTWARE THAT MAY BE CONTAINED IN PORTIONS OF THE REPUBLIQUE PRODUCT.</p>
+<p>&nbsp;</p>
+<p>-----</p>
+<p>&nbsp;</p>
+<p>The following software may be included in this product: @mdi/js. A copy of the source code may be downloaded from git+https://github.com/Templarian/MaterialDesign-JS.git. This software contains the following license and notice below:</p>
+<p>&nbsp;</p>
+<p>Pictogrammers Free License</p>
+<p>--------------------------</p>
+<p>&nbsp;</p>
+<p>This icon collection is released as free, open source, and GPL friendly by</p>
+<p>the [Pictogrammers](http://pictogrammers.com/) icon group. You may use it</p>
+<p>for commercial projects, open source projects, or anything really.</p>
+<p>&nbsp;</p>
+<p># Icons: Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0)</p>
+<p>Some of the icons are redistributed under the Apache 2.0 license. All other</p>
+<p>icons are either redistributed under their respective licenses or are</p>
+<p>distributed under the Apache 2.0 license.</p>
+<p>&nbsp;</p>
+<p># Fonts: Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0)</p>
+<p>All web and desktop fonts are distributed under the Apache 2.0 license. Web</p>
+<p>and desktop fonts contain some icons that are redistributed under the Apache</p>
+<p>2.0 license. All other icons are either redistributed under their respective</p>
+<p>licenses or are distributed under the Apache 2.0 license.</p>
+<p>&nbsp;</p>
+<p># Code: MIT (https://opensource.org/licenses/MIT)</p>
+<p>The MIT license applies to all non-font and non-icon files.</p>
+<p>&nbsp;</p>
+<p>-----</p>
+<p>&nbsp;</p>
+<p>The following software may be included in this product: @mdi/react. A copy of the source code may be downloaded from git+https://github.com/Templarian/MaterialDesign-React.git. This software contains the following license and notice below:</p>
+<p>&nbsp;</p>
+<p>MIT License</p>
+<p>&nbsp;</p>
+<p>Copyright (c) 2018 Austin Andrews</p>
+<p>&nbsp;</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy</p>
+<p>of this software and associated documentation files (the "Software"), to deal</p>
+<p>in the Software without restriction, including without limitation the rights</p>
+<p>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</p>
+<p>copies of the Software, and to permit persons to whom the Software is</p>
+<p>furnished to do so, subject to the following conditions:</p>
+<p>&nbsp;</p>
+<p>The above copyright notice and this permission notice shall be included in all</p>
+<p>copies or substantial portions of the Software.</p>
+<p>&nbsp;</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</p>
+<p>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</p>
+<p>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</p>
+<p>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</p>
+<p>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</p>
+<p>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</p>
+<p>SOFTWARE.</p>
 <p>&nbsp;</p>
 <p>-----</p>
 <p>&nbsp;</p>
@@ -202,7 +253,33 @@ const License = () => (
 <p>&nbsp;</p>
 <p>-----</p>
 <p>&nbsp;</p>
-<p>The following software may be included in this product: react, react-dom, react-reconciler, recoil, scheduler. A copy of the source code may be downloaded from https://github.com/facebook/react.git (react), https://github.com/facebook/react.git (react-dom), https://github.com/facebook/react.git (react-reconciler), https://github.com/facebookexperimental/Recoil.git (recoil), https://github.com/facebook/react.git (scheduler). This software contains the following license and notice below:</p>
+<p>The following software may be included in this product: prop-types. A copy of the source code may be downloaded from https://github.com/facebook/prop-types.git. This software contains the following license and notice below:</p>
+<p>&nbsp;</p>
+<p>MIT License</p>
+<p>&nbsp;</p>
+<p>Copyright (c) 2013-present, Facebook, Inc.</p>
+<p>&nbsp;</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy</p>
+<p>of this software and associated documentation files (the "Software"), to deal</p>
+<p>in the Software without restriction, including without limitation the rights</p>
+<p>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</p>
+<p>copies of the Software, and to permit persons to whom the Software is</p>
+<p>furnished to do so, subject to the following conditions:</p>
+<p>&nbsp;</p>
+<p>The above copyright notice and this permission notice shall be included in all</p>
+<p>copies or substantial portions of the Software.</p>
+<p>&nbsp;</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</p>
+<p>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</p>
+<p>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</p>
+<p>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</p>
+<p>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</p>
+<p>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</p>
+<p>SOFTWARE.</p>
+<p>&nbsp;</p>
+<p>-----</p>
+<p>&nbsp;</p>
+<p>The following software may be included in this product: react, react-dom, react-is, react-reconciler, recoil, scheduler. A copy of the source code may be downloaded from https://github.com/facebook/react.git (react), https://github.com/facebook/react.git (react-dom), https://github.com/facebook/react.git (react-is), https://github.com/facebook/react.git (react-reconciler), https://github.com/facebookexperimental/Recoil.git (recoil), https://github.com/facebook/react.git (scheduler). This software contains the following license and notice below:</p>
 <p>&nbsp;</p>
 <p>MIT License</p>
 <p>&nbsp;</p>

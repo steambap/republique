@@ -10,7 +10,7 @@ const EndTurn = () => {
       <button className="button w-20 h-20 rounded-full" onClick={endTurn}>
         结束回合
       </button>
-      <div className="text-white bg-zinc-900 rounded-lg">
+      <div className="text-white bg-gray-700 rounded-lg">
         {`第 ${gameState.turn} 回合`}
       </div>
     </div>

@@ -8,6 +8,7 @@ export interface ITBS {
   turn: number;
   playerQueue: string[];
   currentPlayer: number;
+  baseInflation: number;
 }
 
 export const tbsStore = atom<ITBS>({
@@ -17,6 +18,7 @@ export const tbsStore = atom<ITBS>({
     factionTable: core.factionTable as FactionTable,
     playerQueue: [],
     currentPlayer: -1,
+    baseInflation: 1,
   },
 });
 

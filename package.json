@@ -8,6 +8,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@mdi/js": "^6.7.96",
+    "@mdi/react": "^1.6.0",
     "immer": "^9.0.12",
     "konva": "^8.3.4",
     "lodash": "^4.17.21",

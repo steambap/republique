@@ -1,3 +1,5 @@
+import { IBuilding } from "./building";
+
 export type CityType = "tundra"
   | "black_soil"
   | "black_soil_city"
@@ -19,12 +21,6 @@ export interface ICityTypeData {
   supply: number;
   trade: number;
   slot: number;
-}
-
-export interface IBuilding {
-  posX: number;
-  posY: number;
-  damage: number;
 }
 
 export interface ICity {

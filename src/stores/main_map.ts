@@ -2,21 +2,22 @@ import { atom, selector } from "recoil";
 import { forIn } from "lodash";
 import { ICity, CityTable, TEdges } from "../engine/main_map";
 import core from "../maps/core.json";
-
-const { cityTable, edges } = core;
+import { IPos } from "../engine/hex";
 
 export interface IMainMap {
   cityTable: CityTable;
   edges: TEdges;
   citySelected: string;
+  bSlotSelected: IPos | null;
 }
 
 export const mainMapStore = atom<IMainMap>({
   key: "main_map",
   default: {
-    cityTable,
-    edges,
+    cityTable: core.cityTable as CityTable,
+    edges: core.edges,
     citySelected: "",
+    bSlotSelected: null,
   },
 });
 

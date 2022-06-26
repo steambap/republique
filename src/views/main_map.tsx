@@ -17,6 +17,7 @@ import AIView from "./ai_view";
 import { useInitGame } from "../stores/turn_based";
 import EndTurn from "./components/end_turn";
 import FactionInfo from "./components/faction_info";
+import CurrentCity from "./current_city";
 
 const MainMap = () => {
   const [map_0_0] = useImage("/map/map-0-0.webp");
@@ -45,6 +46,7 @@ const MainMap = () => {
       setMapState(
         produce((draft) => {
           draft.citySelected = id;
+          draft.bSlotSelected = null;
         })
       );
     },
@@ -58,7 +60,7 @@ const MainMap = () => {
 
   return (
     <div id="main-map">
-      <KonvaCanvas>
+      <KonvaCanvas fullscreen>
         <Group x={-2048} y={-2048}>
           <Group name="terrain">
             <Image image={map_0_0} x={0} y={0} />
@@ -118,18 +120,8 @@ const MainMap = () => {
           </Group>
         </Group>
       </KonvaCanvas>
-      {currentCity && (
-        <div className="bg-slate-200 w-[300px] fixed top-0 left-0 bottom-0">
-          <div className="py-2">{`${currentCity.name} #${currentCity.id}`}</div>
-          <div>{`贸易：${City.currentTrade(currentCity)} / ${
-            currentCity.tradePt
-          }`}</div>
-          <div>{`人口：${currentCity.population}`}</div>
-          <div>{`政治：${currentCity.politicalPt}`}</div>
-          <div>{`土改等级：${currentCity.level}`}</div>
-        </div>
-      )}
       <FactionInfo />
+      <CurrentCity />
       <EndTurn />
       {Object.entries(cpuState.aiStateTable).map(([id, cpuData]) => (
         <AIView key={id} cpuState={cpuData} />

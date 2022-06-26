@@ -5,16 +5,17 @@ import { Stage, Layer } from "react-konva";
 
 interface IProps {
   children: ReactChild | ReactChild[];
+  fullscreen: boolean;
 }
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+const innerWidth = window.innerWidth;
+const innerHeight = window.innerHeight;
 
-const KonvaCanvas = ({ children }: IProps) => {
+const KonvaCanvas = ({ children, fullscreen }: IProps) => {
   const Bridge = useRecoilBridgeAcrossReactRoots_UNSTABLE();
 
   return (
-    <Stage width={width} height={height} draggable>
+    <Stage width={fullscreen ? innerWidth: undefined} height={fullscreen ? innerHeight: undefined} draggable>
       <Bridge>
         <Layer>{children}</Layer>
       </Bridge>
