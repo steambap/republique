@@ -1,21 +1,44 @@
 import { useCallback } from "react";
+import { Group, RegularPolygon, Line } from "react-konva";
 import { produce } from "immer";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { mainMapStore, getCurrentCity } from "../stores/main_map";
 import { City } from "../engine/main_map";
 import { bTypeData } from "../engine/building";
 import { useAddBuilding } from "../stores/city_building";
+import { getPlayerID } from "../stores/turn_based";
+import KonvaCanvas from "./konva_canvas";
+import { ITileData, getTileId } from "../engine/map_definition";
+import { Pos } from "../engine/hex";
+import { size, origin, elavationColor } from "../constants";
+import { TerrainTile } from "./components/terrain";
+import { BuildingTile } from "./components/building";
 
 const y = [0, 1, 2, 3, 4];
+const cellList: ITileData[] = [];
+for (let i = 0; i < 6; i++) {
+  for (let j = 0; j < 9; j++) {
+    cellList.push({
+      id: getTileId(i, j),
+      x: i,
+      y: j,
+      terrain: 1,
+      elavation: 0,
+    });
+  }
+}
 
 const CurrentCity = () => {
   const [mapState, setMapState] = useRecoilState(mainMapStore);
   const currentCity = useRecoilValue(getCurrentCity);
+  const playerID = useRecoilValue(getPlayerID);
   const addBuilding = useAddBuilding();
   const selectSlot = useCallback((x: number, y: number) => {
-    setMapState(produce(draft => {
-      draft.bSlotSelected = {x, y};
-    }))
+    setMapState(
+      produce((draft) => {
+        draft.bSlotSelected = { x, y };
+      })
+    );
   }, []);
 
   if (!currentCity) {
@@ -35,29 +58,55 @@ const CurrentCity = () => {
       </div>
       <div className="ml-2">
         <div className="bg-gray-700 p-2 rounded-lg">
-          <div>
-            {y.map((posY) => {
-              const found = currentCity.buildings.find((b) => {
-                return b.x === 0 && b.y === posY;
-              });
-              const slotName = found ? bTypeData[found.bType].bName : "空地";
-              return (
-                <button
-                  key={posY.toString()}
-                  className="button"
-                  onClick={() => selectSlot(0, posY)}
-                >{`${slotName}(0,${posY})`}</button>
-              );
-            })}
-          </div>
+          <KonvaCanvas width={800} height={480}>
+            <Group name="tiles">
+              {cellList.map((d) => {
+                const sel = mapState.bSlotSelected;
+                const selected = sel && (sel.x === d.x && sel.y === d.y);
+                const building = currentCity.buildings.find(b => b.x === d.x && b.y === d.y);
+                const pixel = Pos.add(origin, Pos.toPixel(d, size));
+
+                return (
+                  <Group
+                    key={d.id}
+                    x={pixel.x}
+                    y={pixel.y}
+                    onClick={() => selectSlot(d.x, d.y)}
+                  >
+                    <RegularPolygon
+                      sides={6}
+                      radius={size}
+                      fill={elavationColor[d.elavation]}
+                      stroke={selected ? "green" : undefined}
+                      strokeWidth={2}
+                      name="elavation"
+                    />
+                    <TerrainTile tile={d} />
+                    {building && <BuildingTile type={building.bType} />}
+                  </Group>
+                );
+              })}
+            </Group>
+          </KonvaCanvas>
         </div>
-        {mapState.bSlotSelected && (
+        {mapState.bSlotSelected && currentCity.owner === playerID && (
           <div className="bg-gray-700 mt-2 p-2 rounded-lg">
             {Object.values(bTypeData).map((bData) => {
               return (
                 <div key={bData.self}>
                   <span>{bData.bName}</span>
-                  <button className="button" onClick={() => addBuilding(currentCity, mapState.bSlotSelected!, bData.self)}>建造</button>
+                  <button
+                    className="button"
+                    onClick={() =>
+                      addBuilding(
+                        currentCity,
+                        mapState.bSlotSelected!,
+                        bData.self
+                      )
+                    }
+                  >
+                    建造
+                  </button>
                 </div>
               );
             })}

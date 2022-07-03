@@ -1,4 +1,4 @@
-import { atom, useRecoilState } from "recoil";
+import { atom, useRecoilState, selector } from "recoil";
 import { produce } from "immer";
 import { FactionTable } from "../engine/faction";
 import core from "../maps/core.json";
@@ -19,6 +19,15 @@ export const tbsStore = atom<ITBS>({
     playerQueue: [],
     currentPlayer: -1,
     baseInflation: 1,
+  },
+});
+
+export const getPlayerID = selector<string>({
+  key: "current_player_id",
+  get: ({ get }) => {
+    const { playerQueue, currentPlayer } = get(tbsStore);
+
+    return playerQueue[currentPlayer] || "-1";
   },
 });
 

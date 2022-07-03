@@ -14,6 +14,10 @@ export interface TerrainTile {
   elavation: number;
 }
 
+export interface ITileData extends TerrainTile {
+  id: string;
+}
+
 export interface TerrainTable {
   [id: string]: TerrainTile;
 }

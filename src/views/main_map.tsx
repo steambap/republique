@@ -60,7 +60,7 @@ const MainMap = () => {
 
   return (
     <div id="main-map">
-      <KonvaCanvas fullscreen>
+      <KonvaCanvas>
         <Group x={-2048} y={-2048}>
           <Group name="terrain">
             <Image image={map_0_0} x={0} y={0} />
