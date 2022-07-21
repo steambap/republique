@@ -47,7 +47,7 @@ const MapEditorPanel = () => {
         draft.roadData = [[]];
       })
     );
-  }, []);
+  }, [editorState]);
   const setRoadMode = useCallback((mode: TRoadMode) => {
     setEditorState(
       produce((draft) => {
@@ -99,7 +99,7 @@ const MapEditorPanel = () => {
           value={sizeX}
           onChange={(e) => setSizeX(Number(e.target.value))}
           min="7"
-          max="21"
+          max="999"
           className="bg-slate-500 text-white pl-2 pr-0.5 py-0.5 rounded"
         />
         x
@@ -108,7 +108,7 @@ const MapEditorPanel = () => {
           value={sizeY}
           onChange={(e) => setSizeY(Number(e.target.value))}
           min="7"
-          max="21"
+          max="999"
           className="bg-slate-500 text-white pl-2 pr-0.5 py-0.5 rounded"
         />
         <button className="button ml-1" type="button" onClick={() => setMap()}>

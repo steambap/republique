@@ -74,9 +74,14 @@ function getNeighbors(pos: IPos): IPos[] {
   return cubeNeighbors.map(cube => cube.toPoint());
 }
 
+function equal(a: IPos, b: IPos): boolean {
+  return a.x === b.x && a.y === b.y;
+}
+
 export const Pos = {
   toPixel,
   add,
   toCube,
   getNeighbors,
+  equal,
 };

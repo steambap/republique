@@ -40,10 +40,11 @@ const CurrentCity = () => {
       })
     );
   }, []);
-
+  const slotSel = mapState.bSlotSelected;
   if (!currentCity) {
     return null;
   }
+  const existingBuilding = slotSel && currentCity.buildings.find(b => b.x === slotSel.x && b.y === slotSel.y);
 
   return (
     <div className="flex text-white text-left fixed left-10 top-10">
@@ -61,8 +62,7 @@ const CurrentCity = () => {
           <KonvaCanvas width={800} height={480}>
             <Group name="tiles">
               {cellList.map((d) => {
-                const sel = mapState.bSlotSelected;
-                const selected = sel && (sel.x === d.x && sel.y === d.y);
+                const selected = slotSel && Pos.equal(slotSel, d);
                 const building = currentCity.buildings.find(b => b.x === d.x && b.y === d.y);
                 const pixel = Pos.add(origin, Pos.toPixel(d, size));
 
@@ -89,7 +89,7 @@ const CurrentCity = () => {
             </Group>
           </KonvaCanvas>
         </div>
-        {mapState.bSlotSelected && currentCity.owner === playerID && (
+        {slotSel && currentCity.owner === playerID && (
           <div className="bg-gray-700 mt-2 p-2 rounded-lg">
             {Object.values(bTypeData).map((bData) => {
               return (
@@ -100,7 +100,7 @@ const CurrentCity = () => {
                     onClick={() =>
                       addBuilding(
                         currentCity,
-                        mapState.bSlotSelected!,
+                        slotSel!,
                         bData.self
                       )
                     }
