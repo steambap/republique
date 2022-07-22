@@ -25,8 +25,8 @@ export interface ICityTypeData {
 
 export interface ICity {
   name: string;
-  posX: number;
-  posY: number;
+  x: number;
+  y: number;
   id: string;
   owner: string;
   tradePt: number;

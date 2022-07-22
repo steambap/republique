@@ -40,6 +40,14 @@ const CurrentCity = () => {
       })
     );
   }, []);
+  const deselectCity = useCallback(() => {
+    setMapState(
+      produce((draft) => {
+        draft.citySelected = "";
+        draft.bSlotSelected = null;
+      })
+    );
+  }, []);
   const slotSel = mapState.bSlotSelected;
   if (!currentCity) {
     return null;
@@ -56,6 +64,9 @@ const CurrentCity = () => {
         <div>{`人口：${currentCity.population}`}</div>
         <div>{`政治：${currentCity.politicalPt}`}</div>
         <div>{`土改等级：${currentCity.level}`}</div>
+        <div>
+          <button className="button" onClick={deselectCity}>关闭</button>
+        </div>
       </div>
       <div className="ml-2">
         <div className="bg-gray-700 p-2 rounded-lg">

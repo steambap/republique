@@ -1,46 +1,43 @@
-import { useEffect } from "react";
+import { useEffect, useCallback, useState } from "react";
+import Konva from "konva";
 import { useRecoilState, useRecoilValue, useRecoilCallback } from "recoil";
-import { Group, Image, Circle, Text, Line } from "react-konva";
+import { Group, RegularPolygon, Circle, Text } from "react-konva";
 import { produce } from "immer";
-import useImage from "use-image";
-import KonvaCanvas from "./konva_canvas";
-import {
-  mainMapStore,
-  getCityList,
-  getCurrentCity,
-  getRoadList,
-} from "../stores/main_map";
+import { mainMapStore, getCityList, getCurrentCity } from "../stores/main_map";
 import { tbsStore } from "../stores/turn_based";
 import { cpuStore } from "../stores/ai";
-import { City } from "../engine/main_map";
+import { Pos } from "../engine/hex";
+import { IRect, Rect } from "../engine/rectangle";
+import { ITileData, getTileId } from "../engine/map_definition";
 import AIView from "./ai_view";
 import { useInitGame } from "../stores/turn_based";
 import EndTurn from "./components/end_turn";
 import FactionInfo from "./components/faction_info";
 import CurrentCity from "./current_city";
+import TerrainMap from "./terrain_map";
+import Stage from "./stage";
 
+const innerWidth = window.innerWidth;
+const innerHeight = window.innerHeight;
+const size = 24;
+const cellList: ITileData[] = [];
+for (let i = 0; i < 115; i++) {
+  for (let j = 0; j < 99; j++) {
+    cellList.push({
+      id: getTileId(i, j),
+      x: i,
+      y: j,
+      terrain: 1,
+      elavation: 0,
+    });
+  }
+}
 const MainMap = () => {
-  const [map_0_0] = useImage("/map/map-0-0.webp");
-  const [map_1_0] = useImage("/map/map-1-0.webp");
-  const [map_2_0] = useImage("/map/map-2-0.webp");
-  const [map_3_0] = useImage("/map/map-3-0.webp");
-  const [map_0_1] = useImage("/map/map-0-1.webp");
-  const [map_1_1] = useImage("/map/map-1-1.webp");
-  const [map_2_1] = useImage("/map/map-2-1.webp");
-  const [map_3_1] = useImage("/map/map-3-1.webp");
-  const [map_0_2] = useImage("/map/map-0-2.webp");
-  const [map_1_2] = useImage("/map/map-1-2.webp");
-  const [map_2_2] = useImage("/map/map-2-2.webp");
-  const [map_3_2] = useImage("/map/map-3-2.webp");
-  const [map_0_3] = useImage("/map/map-0-3.webp");
-  const [map_1_3] = useImage("/map/map-1-3.webp");
-  const [map_2_3] = useImage("/map/map-2-3.webp");
-  const [map_3_3] = useImage("/map/map-3-3.webp");
+  const [x, setX] = useState(2048);
+  const [y, setY] = useState(2048);
   const [mapState, setMapState] = useRecoilState(mainMapStore);
   const [gameState, setGameState] = useRecoilState(tbsStore);
   const cityList = useRecoilValue(getCityList);
-  const currentCity = useRecoilValue(getCurrentCity);
-  const roadList = useRecoilValue(getRoadList);
   const onCitySelect = useRecoilCallback(
     () => (id: string) => {
       setMapState(
@@ -57,48 +54,52 @@ const MainMap = () => {
   useEffect(() => {
     initGame();
   }, []);
+  const onDragEnd = useCallback((e: Konva.KonvaEventObject<DragEvent>) => {
+    setX(2048 - e.target.x());
+    setY(2048 - e.target.y());
+  }, []);
+  const rect: IRect = {
+    x: x - size,
+    y: y - size,
+    width: innerWidth + size * 2,
+    height: innerHeight + size * 2,
+  };
 
   return (
     <div id="main-map">
-      <KonvaCanvas>
+      <Stage onDragEnd={onDragEnd}>
         <Group x={-2048} y={-2048}>
-          <Group name="terrain">
-            <Image image={map_0_0} x={0} y={0} />
-            <Image image={map_1_0} x={1024} y={0} />
-            <Image image={map_2_0} x={2048} y={0} />
-            <Image image={map_3_0} x={3072} y={0} />
-            <Image image={map_0_1} x={0} y={1024} />
-            <Image image={map_1_1} x={1024} y={1024} />
-            <Image image={map_2_1} x={2048} y={1024} />
-            <Image image={map_3_1} x={3072} y={1024} />
-            <Image image={map_0_2} x={0} y={2048} />
-            <Image image={map_1_2} x={1024} y={2048} />
-            <Image image={map_2_2} x={2048} y={2048} />
-            <Image image={map_3_2} x={3072} y={2048} />
-            <Image image={map_0_3} x={0} y={3072} />
-            <Image image={map_1_3} x={1024} y={3072} />
-            <Image image={map_2_3} x={2048} y={3072} />
-            <Image image={map_3_3} x={3072} y={3072} />
-          </Group>
-          <Group name="edge">
-            {roadList.map((road) => {
+          <TerrainMap />
+          <Group name="tiles">
+            {cellList.map((d) => {
+              const pixel = Pos.toPixel(d, size);
+              if (!Rect.contains(rect, pixel)) {
+                return null;
+              }
+
               return (
-                <Line
-                  points={road}
-                  stroke="black"
-                  key={road.join(",")}
-                  strokeWidth={0.5}
-                  tension={0.5}
-                />
+                <Group key={d.id} x={pixel.x} y={pixel.y}>
+                  <RegularPolygon
+                    sides={6}
+                    radius={size}
+                    stroke="grey"
+                    strokeWidth={1}
+                  />
+                </Group>
               );
             })}
           </Group>
           <Group name="city">
             {cityList.map((city) => {
+              const pixel = Pos.toPixel(city, size);
+              if (!Rect.contains(rect, pixel)) {
+                return null;
+              }
+
               return (
                 <Group
-                  x={city.posX}
-                  y={city.posY}
+                  x={pixel.x}
+                  y={pixel.y}
                   key={city.id}
                   onClick={() => onCitySelect(city.id)}
                 >
@@ -119,7 +120,7 @@ const MainMap = () => {
             })}
           </Group>
         </Group>
-      </KonvaCanvas>
+      </Stage>
       <FactionInfo />
       <CurrentCity />
       <EndTurn />

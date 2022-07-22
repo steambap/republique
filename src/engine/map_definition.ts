@@ -32,7 +32,7 @@ export function newTile(x: number, y: number): TerrainTile {
 }
 
 export function getTileId(x: number, y: number): string {
-  return `${String(x).padStart(2, "0")}${String(y).padStart(2, "0")}`;
+  return `${x},${y}`;
 }
 
 export function getMovementCost(from: TerrainTile, to: TerrainTile) {
